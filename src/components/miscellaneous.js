@@ -1,8 +1,30 @@
 import React from "react"
 import styled from "styled-components"
 
-const Container = styled.div``
+import Card from "./card"
 
-const Miscellaneous = () => <Container>Miscellaneous</Container>
+import { colors } from "../styled/constants"
+import { responsivePadding } from "../styled/styles"
+
+const Container = styled.div`
+  background-color: ${colors.SPACE_CADET};
+  display: flex;
+  justify-content: center;
+  ${responsivePadding}
+`
+
+const CardContainer = styled.div`
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+`
+
+const Miscellaneous = () => (
+  <Container>
+    <CardContainer>
+      <Card title={"Miscellaneous"} />
+    </CardContainer>
+  </Container>
+)
 
 export default Miscellaneous
