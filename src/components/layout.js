@@ -8,9 +8,50 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { createGlobalStyle } from "styled-components"
+import "@fontsource/yeseva-one"
+import "@fontsource/nunito/300.css"
 
 import Header from "./header"
-import "./layout.css"
+
+const GlobalStyle = createGlobalStyle`
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: "Nunito";
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+}
+
+#___gatsby, #gatsby-focus-wrapper {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Yeseve One"
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin:0;
+  outline: none;
+  /* TODO: handle outline */
+}
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,23 +66,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <GlobalStyle />
+      <Header siteTitle={data.site.siteMetadata?.title || `AZ`} />
+      <main>{children}</main>
     </>
   )
 }
