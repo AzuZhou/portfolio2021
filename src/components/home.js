@@ -5,7 +5,7 @@ import Summary from "./summary"
 import Skills from "./skills"
 import Projects from "./projects"
 import Miscellaneous from "./miscellaneous"
-import Snake from "./snake"
+import Snake from "./shared/snake"
 import Contact from "./contact"
 
 import { colors } from "../styled/constants"

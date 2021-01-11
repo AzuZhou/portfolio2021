@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Card from "./card"
+import Card from "./shared/card"
 
 import { colors } from "../styled/constants"
 import { responsivePadding } from "../styled/styles"

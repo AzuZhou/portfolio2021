@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-import Card from "./card"
+import Card from "./shared/card"
 
-import { colors } from "../styled/constants"
-import { responsivePadding } from "../styled/styles"
+import { colors, fontSizes } from "../styled/constants"
+import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.div`
   height: 500px;
@@ -18,12 +18,36 @@ const CardContainer = styled.div`
   width: 80%;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  p {
+    text-shadow: 0px 1px 2px white;
+    font-size: ${fontSizes.mobile.title};
+    color: white;
+    margin: 0;
+    font-family: "Yeseve One";
+    letter-spacing: 1.2px;
+
+    ${desktopBreakpoint} {
+      font-size: ${fontSizes.desktop.title};
+    }
+  }
 `
 
 const Summary = () => (
   <Container>
     <CardContainer>
-      <Card title="Summary" />
+      <Card animation="trail">
+        <p>
+          Welcome to my <strong>portfolio</strong>,
+        </p>
+        <p>
+          my name is <strong>Azucena Zhou</strong>
+        </p>
+        <p>
+          and I am a <strong>frontend developer</strong>
+        </p>
+      </Card>
     </CardContainer>
   </Container>
 )
