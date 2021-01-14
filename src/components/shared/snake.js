@@ -3,17 +3,17 @@ import styled from "styled-components"
 
 const Container = styled.div`
   background: linear-gradient(
-    ${props => props.degrees},
-    ${props => props.firstColor} 49%,
-    ${props => props.secondColor} 50% 100%
+    ${props => props.$degrees},
+    ${props => props.$firstColor} 49%,
+    ${props => props.$secondColor} 50% 100%
   );
 `
 
 const Snake = ({ firstColor, secondColor, degrees }) => (
   <Container
-    degrees={degrees}
-    firstColor={firstColor}
-    secondColor={secondColor}
+    $degrees={degrees}
+    $firstColor={firstColor}
+    $secondColor={secondColor}
   >
     Snake
   </Container>

@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import Card from "./shared/card"
+import Tags from "./tags"
 
 import { colors } from "../styled/constants"
-import { responsivePadding } from "../styled/styles"
+import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.div`
   background-color: ${colors.SUNSET_ORANGE};
@@ -14,17 +15,26 @@ const Container = styled.div`
 `
 
 const CardContainer = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-`
 
-const Skills = () => (
-  <Container>
-    <CardContainer>
-      <Card title="Skills" />
-    </CardContainer>
-  </Container>
-)
+  ${desktopBreakpoint} {
+    width: 80%;
+  }
+`
+// TODO: tags wrapper with first time state
+
+const Skills = () => {
+  return (
+    <Container>
+      <CardContainer>
+        <Card title="Skills" alignment="flex-start" animation="fadeIn">
+          <Tags />
+        </Card>
+      </CardContainer>
+    </Container>
+  )
+}
 
 export default Skills

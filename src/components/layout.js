@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import "@fontsource/yeseva-one"
 import "@fontsource/nunito/300.css"
+import "@fontsource/nunito"
 
 import Header from "./header"
 
@@ -22,9 +23,11 @@ html {
 
 body {
   font-family: "Nunito";
+  font-weight: 300;
   margin: 0;
   min-height: 100%;
   display: flex;
+  color: white;
 }
 
 #___gatsby, #gatsby-focus-wrapper {
@@ -35,7 +38,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Yeseve One"
+  font-family: "Yeseve One";
+  margin: 0;
 }
 
 a {

@@ -15,20 +15,23 @@ const Container = styled.div`
 `
 
 const CardContainer = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   p {
     text-shadow: 0px 1px 2px white;
-    font-size: ${fontSizes.mobile.title};
-    color: white;
     margin: 0;
     font-family: "Yeseve One";
     letter-spacing: 1.2px;
+    font-size: ${fontSizes.mobile.title};
+  }
 
-    ${desktopBreakpoint} {
+  ${desktopBreakpoint} {
+    width: 80%;
+
+    p {
       font-size: ${fontSizes.desktop.title};
     }
   }
@@ -45,7 +48,7 @@ const Summary = () => (
           my name is <strong>Azucena Zhou</strong>
         </p>
         <p>
-          and I am a <strong>frontend developer</strong>
+          and I am a <strong>frontend developer</strong>.
         </p>
       </Card>
     </CardContainer>

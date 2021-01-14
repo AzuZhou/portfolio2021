@@ -22,7 +22,7 @@ const CardContainer = styled.div`
 const Projects = () => (
   <Container>
     <CardContainer>
-      <Card title="Projects" />
+      <Card title="Projects" alignment="flex-end" />
     </CardContainer>
   </Container>
 )

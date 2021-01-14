@@ -22,7 +22,7 @@ const CardContainer = styled.div`
 const Miscellaneous = () => (
   <Container>
     <CardContainer>
-      <Card title={"Miscellaneous"} />
+      <Card title={"Miscellaneous"} alignment="flex-start" />
     </CardContainer>
   </Container>
 )

@@ -22,7 +22,7 @@ const CardContainer = styled.div`
 const Contact = () => (
   <Container>
     <CardContainer>
-      <Card title="Contact" />
+      <Card />
     </CardContainer>
   </Container>
 )
