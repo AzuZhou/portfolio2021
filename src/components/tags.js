@@ -5,20 +5,7 @@ import Tag from "./shared/tag"
 
 import useInterval from "../hooks/useInterval"
 
-import { colors } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"
-
-const technologies = [
-  "HTML5",
-  "CSS3",
-  "Flexbox",
-  "Grid",
-  "JavaScript",
-  "React",
-  "Redux",
-  "TypeScript",
-  "Gatsby",
-]
 
 const Container = styled.div`
   display: grid;
@@ -33,23 +20,21 @@ const Container = styled.div`
   }
 `
 
-const Tags = () => {
-  const [activeTechnology, setActiveTechnology] = useState(0)
+const Tags = ({ list, color }) => {
+  const [activeTag, setActiveTag] = useState(0)
 
   useInterval(() => {
-    setActiveTechnology(state =>
-      state === technologies.length - 1 ? 0 : state + 1
-    )
+    setActiveTag(state => (state === list.length - 1 ? 0 : state + 1))
   }, 1500)
 
   return (
     <Container>
-      {technologies.map((technology, index) => (
+      {list.map((item, index) => (
         <Tag
-          key={technology}
-          text={technology}
-          color={colors.SUNSET_ORANGE}
-          isActive={index === activeTechnology}
+          key={item}
+          text={item}
+          color={color}
+          isActive={index === activeTag}
         />
       ))}
     </Container>
