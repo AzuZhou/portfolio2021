@@ -1,11 +1,28 @@
 import React from "react"
+import styled from "styled-components"
 import { useSpring, a } from "react-spring"
 
-export default ({ isVisible, children, unstyled }) => {
+import { desktopBreakpoint } from "../styled/styles"
+
+const Container = styled(a.div)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  will-change: opacity;
+
+  ${desktopBreakpoint} {
+    justify-content: ${props => props.$alignment};
+  }
+`
+
+export default ({ isVisible, children, alignment }) => {
   const props = useSpring({
     opacity: isVisible ? 1 : 0,
-    width: unstyled ? "" : "100%",
   })
 
-  return <a.div style={props}>{children}</a.div>
+  return (
+    <Container style={props} $alignment={alignment}>
+      {children}
+    </Container>
+  )
 }

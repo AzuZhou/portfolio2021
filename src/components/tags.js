@@ -9,8 +9,7 @@ import { desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.div`
   display: grid;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  gap: 20px;
   width: 100%;
   grid-template-columns: repeat(auto-fill, 150px);
   justify-content: center;
@@ -31,8 +30,8 @@ const Tags = ({ list, color }) => {
     <Container>
       {list.map((item, index) => (
         <Tag
-          key={item}
-          text={item}
+          key={item.id}
+          text={item.text}
           color={color}
           isActive={index === activeTag}
         />

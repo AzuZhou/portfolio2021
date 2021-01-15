@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
+import { v4 } from "uuid"
 
 import Card from "./shared/card"
 import Tags from "./tags"
@@ -8,15 +9,15 @@ import { colors } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const technologies = [
-  "HTML5",
-  "CSS3",
-  "Flexbox",
-  "Grid",
-  "JavaScript",
-  "React",
-  "Redux",
-  "TypeScript",
-  "Gatsby",
+  { id: v4(), text: "HTML5" },
+  { id: v4(), text: "CSS3" },
+  { id: v4(), text: "Flexbox" },
+  { id: v4(), text: "Grid" },
+  { id: v4(), text: "JavaScript" },
+  { id: v4(), text: "React" },
+  { id: v4(), text: "Redux" },
+  { id: v4(), text: "TypeScript" },
+  { id: v4(), text: "Gatsby" },
 ]
 
 const Container = styled.div`

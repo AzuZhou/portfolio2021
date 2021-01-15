@@ -17,6 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
 
   ${desktopBreakpoint} {
@@ -52,13 +53,15 @@ const Card = ({ children, title, animation, alignment }) => {
           $alignment={alignment}
         >
           {title && (
-            <FadeIn isVisible={isVisible} unstyled>
+            <FadeIn isVisible={isVisible} alignment={alignment}>
               <Title>{title}</Title>
             </FadeIn>
           )}
 
           {animation ? (
-            <Animation isVisible={isVisible}>{children}</Animation>
+            <Animation isVisible={isVisible} alignment={alignment}>
+              {children}
+            </Animation>
           ) : (
             children
           )}
