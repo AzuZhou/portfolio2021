@@ -15,7 +15,7 @@ const Container = styled(a.div)`
   }
 `
 
-export default ({ isVisible, children, alignment }) => {
+export default ({ isVisible, alignment, children }) => {
   const props = useSpring({
     opacity: isVisible ? 1 : 0,
   })

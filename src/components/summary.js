@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
-import Card from "./shared/card"
+import Section from "./shared/section"
 
 import { colors, fontSizes } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
-const Container = styled.div`
+const Container = styled.section`
   height: 500px;
   background-color: ${colors.SANDY_BROWN};
   display: flex;
@@ -14,7 +14,7 @@ const Container = styled.div`
   ${responsivePadding}
 `
 
-const CardContainer = styled.div`
+const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -39,8 +39,8 @@ const CardContainer = styled.div`
 
 const Summary = () => (
   <Container>
-    <CardContainer>
-      <Card animation="trail">
+    <SectionContainer>
+      <Section animation="trail" lineHeight={60}>
         <p>
           Welcome to my <strong>portfolio</strong>,
         </p>
@@ -50,8 +50,8 @@ const Summary = () => (
         <p>
           and I am a <strong>frontend developer</strong>.
         </p>
-      </Card>
-    </CardContainer>
+      </Section>
+    </SectionContainer>
   </Container>
 )
 

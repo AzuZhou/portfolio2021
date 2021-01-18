@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { v4 } from "uuid"
 
-import Card from "./shared/card"
+import Section from "./shared/section"
 import Boxes from "./boxes"
 
 import { colors } from "../styled/constants"
@@ -16,14 +16,14 @@ const projects = [
   },
 ]
 
-const Container = styled.div`
+const Container = styled.section`
   background-color: ${colors.ENGLISH_VIOLET};
   display: flex;
   justify-content: center;
   ${responsivePadding}
 `
 
-const CardContainer = styled.div`
+const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -35,11 +35,11 @@ const CardContainer = styled.div`
 
 const Projects = () => (
   <Container>
-    <CardContainer>
-      <Card title="Projects" alignment="flex-end" animation="fadeIn">
+    <SectionContainer>
+      <Section title="Projects" alignment="flex-end" animation="fadeIn">
         <Boxes list={projects} />
-      </Card>
-    </CardContainer>
+      </Section>
+    </SectionContainer>
   </Container>
 )
 

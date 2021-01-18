@@ -4,6 +4,7 @@ import VisivilitySensor from "react-visibility-sensor"
 
 import FadeIn from "../../animations/fade-in"
 import Trail from "../../animations/trail"
+import Transition from "../../animations/transition"
 
 import { fontSizes } from "../../styled/constants"
 import { desktopBreakpoint } from "../../styled/styles"
@@ -11,9 +12,11 @@ import { desktopBreakpoint } from "../../styled/styles"
 const animations = {
   trail: Trail,
   fadeIn: FadeIn,
+  transition: Transition,
 }
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +45,13 @@ const Title = styled.h2`
   }
 `
 
-const Card = ({ children, title, animation, alignment }) => {
+const Section = ({
+  children,
+  title,
+  animation,
+  alignment,
+  ...animationProps
+}) => {
   const Animation = animation ? animations[animation] || null : null
 
   return (
@@ -59,7 +68,11 @@ const Card = ({ children, title, animation, alignment }) => {
           )}
 
           {animation ? (
-            <Animation isVisible={isVisible} alignment={alignment}>
+            <Animation
+              isVisible={isVisible}
+              alignment={alignment}
+              {...animationProps}
+            >
               {children}
             </Animation>
           ) : (
@@ -71,4 +84,4 @@ const Card = ({ children, title, animation, alignment }) => {
   )
 }
 
-export default Card
+export default Section

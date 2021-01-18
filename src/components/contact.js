@@ -1,19 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 
-import Card from "./shared/card"
+import Section from "./shared/section"
 
 import { colors } from "../styled/constants"
 import { responsivePadding } from "../styled/styles"
 
-const Container = styled.div`
+const Container = styled.section`
   background-color: ${colors.MAASTRICHT_BLUE};
   display: flex;
   justify-content: center;
   ${responsivePadding}
 `
 
-const CardContainer = styled.div`
+const SectionContainer = styled.div`
   width: 80%;
   display: flex;
   justify-content: center;
@@ -21,9 +21,9 @@ const CardContainer = styled.div`
 
 const Contact = () => (
   <Container>
-    <CardContainer>
-      <Card />
-    </CardContainer>
+    <SectionContainer>
+      <Section />
+    </SectionContainer>
   </Container>
 )
 

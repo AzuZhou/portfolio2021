@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { v4 } from "uuid"
 
-import Card from "./shared/card"
+import Section from "./shared/section"
 import Tags from "./tags"
 
 import { colors } from "../styled/constants"
@@ -20,14 +20,14 @@ const technologies = [
   { id: v4(), text: "Gatsby" },
 ]
 
-const Container = styled.div`
+const Container = styled.section`
   background-color: ${colors.SUNSET_ORANGE};
   display: flex;
   justify-content: center;
   ${responsivePadding}
 `
 
-const CardContainer = styled.div`
+const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -39,11 +39,11 @@ const CardContainer = styled.div`
 
 const Skills = () => (
   <Container>
-    <CardContainer>
-      <Card title="Skills" alignment="flex-start" animation="fadeIn">
+    <SectionContainer>
+      <Section title="Skills" alignment="flex-start" animation="fadeIn">
         <Tags list={technologies} color={colors.SUNSET_ORANGE} />
-      </Card>
-    </CardContainer>
+      </Section>
+    </SectionContainer>
   </Container>
 )
 

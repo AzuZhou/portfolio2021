@@ -1,11 +1,15 @@
 import React from "react"
+import styled from "styled-components"
 import { useSpring, a } from "react-spring"
 
-const trans = (x, y, s) => {
-  return `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-}
+const Container = styled(a.div)`
+  will-change: transform;
+`
 
-export default ({ children, elementId }) => {
+const trans = (x, y, s) =>
+  `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+
+export default ({ elementId, children }) => {
   const [props, setProps] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 5, tension: 350, friction: 40 },
@@ -20,7 +24,7 @@ export default ({ children, elementId }) => {
   }
 
   return (
-    <a.div
+    <Container
       onMouseMove={({ clientX, clientY }) => {
         const rect = document.getElementById(elementId).getBoundingClientRect()
         const x = clientX - rect.left
@@ -32,6 +36,6 @@ export default ({ children, elementId }) => {
       style={{ transform: props.xys.interpolate(trans) }}
     >
       {children}
-    </a.div>
+    </Container>
   )
 }
