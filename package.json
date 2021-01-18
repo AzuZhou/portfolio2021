@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@fontsource/nunito": "^4.1.0",
     "@fontsource/yeseva-one": "^4.1.0",
     "babel-plugin-styled-components": "^1.12.0",

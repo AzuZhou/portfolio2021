@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import { LinkedinOutlined, GithubOutlined } from "@ant-design/icons"
 
 import Section from "./shared/section"
 
-import { colors } from "../styled/constants"
-import { responsivePadding } from "../styled/styles"
+import { colors, fontSizes } from "../styled/constants"
+import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.section`
   background-color: ${colors.MAASTRICHT_BLUE};
@@ -19,10 +20,38 @@ const SectionContainer = styled.div`
   justify-content: center;
 `
 
+const IconContainer = styled.div`
+  padding: 0 40px;
+
+  svg {
+    font-size: ${fontSizes.mobile.title};
+    fill: white;
+  }
+
+  ${desktopBreakpoint} {
+    padding: 0 60px;
+
+    svg {
+      font-size: ${fontSizes.desktop.title};
+    }
+  }
+`
+
 const Contact = () => (
   <Container>
     <SectionContainer>
-      <Section />
+      <Section animation="trail" lineHeight={100} direction="row">
+        <IconContainer>
+          <a href="https://github.com/AzuZhou" target="_blank">
+            <GithubOutlined />
+          </a>
+        </IconContainer>
+        <IconContainer>
+          <a href="https://linkedin.com/in/azu-zhou" target="_blank">
+            <LinkedinOutlined />
+          </a>
+        </IconContainer>
+      </Section>
     </SectionContainer>
   </Container>
 )

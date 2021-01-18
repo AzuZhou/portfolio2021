@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { useTransition, a } from "react-spring"
+import { useTransition } from "react-spring"
 
 const Container = styled.div`
   position: relative;
@@ -14,7 +14,6 @@ const Container = styled.div`
 
 const Transition = ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
-  console.log("items: ", items[0])
 
   const transitions = useTransition(
     isVisible ? items : [],
@@ -24,7 +23,7 @@ const Transition = ({ isVisible, children }) => {
       from: { opacity: 0, left: "-100%" },
       enter: { opacity: 1, left: "0%" },
       leave: { opacity: 0, left: "-100%" },
-      trail: 600,
+      trail: 300,
       unique: true,
       reset: true,
     }

@@ -18,7 +18,7 @@ const animations = {
 const Container = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => props.$direction ?? "column"};
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -50,6 +50,7 @@ const Section = ({
   title,
   animation,
   alignment,
+  direction,
   ...animationProps
 }) => {
   const Animation = animation ? animations[animation] || null : null
@@ -60,6 +61,7 @@ const Section = ({
         <Container
           $isCentered={alignment !== "flex-start" && alignment !== "flex-end"}
           $alignment={alignment}
+          $direction={direction}
         >
           {title && (
             <FadeIn isVisible={isVisible} alignment={alignment}>
