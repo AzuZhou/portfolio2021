@@ -2,17 +2,19 @@ import React from "react"
 import styled from "styled-components"
 import { useTransition, a } from "react-spring"
 
-const Container = styled(a.div)`
+const Container = styled.div`
   position: relative;
-  height: 30px;
+  height: 60px;
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
 `
 
 const Transition = ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
+  console.log("items: ", items[0])
 
   const transitions = useTransition(
     isVisible ? items : [],
@@ -28,11 +30,14 @@ const Transition = ({ isVisible, children }) => {
     }
   )
 
-  return transitions.map(({ item, props }) => (
-    <Container key={item.props.id}>
-      {React.cloneElement(item, { style: props })}
-    </Container>
-  ))
+  return transitions.map(
+    ({ item, key, props }) =>
+      item && (
+        <Container key={key}>
+          {React.cloneElement(item, { style: props })}
+        </Container>
+      )
+  )
 }
 
 export default React.memo(

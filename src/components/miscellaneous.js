@@ -5,27 +5,24 @@ import { a } from "react-spring"
 
 import Section from "./shared/section"
 
-import { colors } from "../styled/constants"
-import { responsivePadding } from "../styled/styles"
+import { colors, fontSizes } from "../styled/constants"
+import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const miscellaneous = [
   {
     id: v4(),
     text: "I am vegan and I love ramen",
-    imgUrl:
-      "https://www.feastingathome.com/wp-content/uploads/2012/11/vegan-ramen-13.jpg",
+    imgUrl: "",
   },
   {
     id: v4(),
     text: "I picked up running after watching Run with the Wind",
-    imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg",
+    imgUrl: "",
   },
   {
     id: v4(),
     text: "My word of the year is: Freedom",
-    imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg",
+    imgUrl: "",
   },
 ]
 
@@ -37,16 +34,34 @@ const Container = styled.section`
 `
 
 const SectionContainer = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
+
+  ${desktopBreakpoint} {
+    width: 80%;
+  }
 `
 
 const Note = styled(a.div)`
   position: absolute;
   left: -100%;
   white-space: nowrap;
+  will-change: left, opacity;
+  background-color: white;
+  color: ${colors.SPACE_CADET};
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: ${fontSizes.mobile.primaryText};
+
+  ${desktopBreakpoint} {
+    padding: 10px 20px;
+    font-size: ${fontSizes.desktop.primaryText};
+  }
 `
+
+// TODO: handle responsive
 
 const Miscellaneous = () => (
   <Container>
