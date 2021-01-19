@@ -4,6 +4,7 @@ import VisivilitySensor from "react-visibility-sensor"
 
 import FadeIn from "../../animations/fade-in"
 import Trail from "../../animations/trail"
+import SlideIn from "../../animations/slide-in"
 import Transition from "../../animations/transition"
 
 import { fontSizes } from "../../styled/constants"
@@ -12,6 +13,7 @@ import { desktopBreakpoint } from "../../styled/styles"
 const animations = {
   trail: Trail,
   fadeIn: FadeIn,
+  slideIn: SlideIn,
   transition: Transition,
 }
 

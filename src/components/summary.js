@@ -7,7 +7,6 @@ import { colors, fontSizes } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.section`
-  height: 500px;
   background-color: ${colors.SANDY_BROWN};
   display: flex;
   justify-content: center;

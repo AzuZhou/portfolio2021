@@ -14,9 +14,7 @@ const Snake = ({ firstColor, secondColor, degrees }) => (
     $degrees={degrees}
     $firstColor={firstColor}
     $secondColor={secondColor}
-  >
-    Snake
-  </Container>
+  />
 )
 
 export default Snake

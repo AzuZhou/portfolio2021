@@ -69,7 +69,7 @@ const Miscellaneous = () => (
       <Section
         title={"Miscellaneous"}
         alignment="flex-start"
-        animation="transition"
+        animation="slideIn"
       >
         {miscellaneous.map(({ id, text }) => (
           <Note id={id} key={v4()}>

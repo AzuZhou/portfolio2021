@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { v4 } from "uuid"
 
 import Section from "./shared/section"
-import Tags from "./tags"
 
 import { colors } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
@@ -18,6 +17,7 @@ const technologies = [
   { id: v4(), text: "Redux" },
   { id: v4(), text: "TypeScript" },
   { id: v4(), text: "Gatsby" },
+  { id: v4(), text: "Git" },
 ]
 
 const Container = styled.section`
@@ -40,8 +40,17 @@ const SectionContainer = styled.div`
 const Skills = () => (
   <Container>
     <SectionContainer>
-      <Section title="Skills" alignment="flex-start" animation="fadeIn">
-        <Tags list={technologies} color={colors.SUNSET_ORANGE} />
+      <Section
+        title="Skills"
+        alignment="flex-start"
+        animation="transition"
+        color={colors.SUNSET_ORANGE}
+      >
+        {technologies.map(({ id, text }) => (
+          <span key={v4()} id={id}>
+            {text}
+          </span>
+        ))}
       </Section>
     </SectionContainer>
   </Container>
