@@ -45,7 +45,6 @@ const SectionContainer = styled.div`
 
 const Note = styled(a.div)`
   position: absolute;
-  left: -100%;
   white-space: nowrap;
   will-change: left, opacity;
   background-color: white;
@@ -63,22 +62,26 @@ const Note = styled(a.div)`
 
 // TODO: handle responsive
 
-const Miscellaneous = () => (
-  <Container>
-    <SectionContainer>
-      <Section
-        title={"Miscellaneous"}
-        alignment="flex-start"
-        animation="slideIn"
-      >
-        {miscellaneous.map(({ id, text }) => (
-          <Note id={id} key={v4()}>
-            {text}
-          </Note>
-        ))}
-      </Section>
-    </SectionContainer>
-  </Container>
-)
+const Miscellaneous = () => {
+  return (
+    <Container>
+      <SectionContainer>
+        <Section
+          title="Miscellaneous"
+          alignment="flex-start"
+          animation="slideIn"
+          from="left"
+          gap={20}
+        >
+          {miscellaneous.map(({ id, text }) => (
+            <Note id={id} key={v4()}>
+              {text}
+            </Note>
+          ))}
+        </Section>
+      </SectionContainer>
+    </Container>
+  )
+}
 
 export default Miscellaneous

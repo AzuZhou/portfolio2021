@@ -3,7 +3,8 @@ import styled from "styled-components"
 import VisivilitySensor from "react-visibility-sensor"
 
 import FadeIn from "../../animations/fade-in"
-import Trail from "../../animations/trail"
+import VerticalTrail from "../../animations/vertical-trail"
+import HorizontalTrail from "../../animations/horizontal-trail"
 import SlideIn from "../../animations/slide-in"
 import Transition from "../../animations/transition"
 
@@ -11,7 +12,8 @@ import { fontSizes } from "../../styled/constants"
 import { desktopBreakpoint } from "../../styled/styles"
 
 const animations = {
-  trail: Trail,
+  verticalTrail: VerticalTrail,
+  horizontalTrail: HorizontalTrail,
   fadeIn: FadeIn,
   slideIn: SlideIn,
   transition: Transition,
@@ -26,7 +28,7 @@ const Container = styled.div`
   width: 100%;
 
   ${desktopBreakpoint} {
-    width: ${props => (!props.$isCentered ? "50%" : "100%")};
+    width: 100%;
     align-items: ${props =>
       props.$alignment === "flex-start"
         ? props.$alignment
@@ -60,11 +62,7 @@ const Section = ({
   return (
     <VisivilitySensor partialVisibility>
       {({ isVisible }) => (
-        <Container
-          $isCentered={alignment !== "flex-start" && alignment !== "flex-end"}
-          $alignment={alignment}
-          $direction={direction}
-        >
+        <Container $alignment={alignment} $direction={direction}>
           {title && (
             <FadeIn isVisible={isVisible} alignment={alignment}>
               <Title>{title}</Title>

@@ -40,7 +40,7 @@ const IconContainer = styled.div`
 const Contact = () => (
   <Container>
     <SectionContainer>
-      <Section animation="trail" lineHeight={80} direction="row">
+      <Section animation="verticalTrail" lineHeight={80} direction="row">
         <IconContainer>
           <a href="https://github.com/AzuZhou" target="_blank">
             <GithubOutlined />

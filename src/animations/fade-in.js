@@ -15,7 +15,7 @@ const Container = styled(a.div)`
   }
 `
 
-export default ({ isVisible, alignment, children }) => {
+const FadeIn = ({ isVisible, alignment, children }) => {
   const props = useSpring({
     opacity: isVisible ? 1 : 0,
   })
@@ -26,3 +26,8 @@ export default ({ isVisible, alignment, children }) => {
     </Container>
   )
 }
+
+export default React.memo(
+  FadeIn,
+  (prevProps, nextProps) => prevProps.isVisible === nextProps.isVisible
+)

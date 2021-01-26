@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { v4 } from "uuid"
 
 import Section from "./shared/section"
-import Boxes from "./boxes"
+import Box from "./shared/box"
 
 import { colors } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
@@ -11,6 +11,16 @@ import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 const projects = [
   {
     name: "Movie Search",
+    imgUrl: "",
+    id: v4(),
+  },
+  {
+    name: "Real-time Chat",
+    imgUrl: "",
+    id: v4(),
+  },
+  {
+    name: "Instagram Clone",
     imgUrl: "",
     id: v4(),
   },
@@ -36,8 +46,14 @@ const SectionContainer = styled.div`
 const Projects = () => (
   <Container>
     <SectionContainer>
-      <Section title="Projects" alignment="flex-end" animation="fadeIn">
-        <Boxes list={projects} />
+      <Section
+        title="Projects"
+        alignment="flex-end"
+        animation="horizontalTrail"
+      >
+        {projects.map(props => (
+          <Box key={props.id} {...props} />
+        ))}
       </Section>
     </SectionContainer>
   </Container>
