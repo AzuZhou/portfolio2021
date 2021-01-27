@@ -25,7 +25,6 @@ export default ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
 
   const trail = useTrail(items.length, {
-    delay: 300,
     config: { mass: 5, tension: 2000, friction: 200 },
     opacity: isVisible ? 1 : 0,
     y: isVisible ? 0 : 100,

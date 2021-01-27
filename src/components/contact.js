@@ -21,7 +21,7 @@ const SectionContainer = styled.div`
 `
 
 const IconContainer = styled.div`
-  padding: 0 40px;
+  padding: 40px 0;
 
   svg {
     font-size: ${fontSizes.mobile.title};
@@ -40,7 +40,7 @@ const IconContainer = styled.div`
 const Contact = () => (
   <Container>
     <SectionContainer>
-      <Section animation="verticalTrail" lineHeight={80} direction="row">
+      <Section animation="verticalTrail" direction="row-reverse">
         <IconContainer>
           <a href="https://github.com/AzuZhou" target="_blank">
             <GithubOutlined />

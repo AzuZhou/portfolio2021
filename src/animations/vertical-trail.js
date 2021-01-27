@@ -4,7 +4,7 @@ import { useTrail, a } from "react-spring"
 
 const Container = styled(a.div)`
   & ~ div {
-    margin-top: ${props => `${props.$gap}px`};
+    margin-top: ${props => (props.$gap ? `${props.$gap}px` : 0)};
   }
 `
 
@@ -12,7 +12,6 @@ export default ({ isVisible, gap, children }) => {
   const items = React.Children.toArray(children)
 
   const trail = useTrail(items.length, {
-    delay: 300,
     config: { mass: 5, tension: 2000, friction: 200 },
     opacity: isVisible ? 1 : 0,
     x: isVisible ? 0 : 100,

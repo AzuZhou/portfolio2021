@@ -6,7 +6,7 @@ import useHeight from "../hooks/useHeight"
 
 const Container = styled(a.div)`
   position: relative;
-  height: ${props => `${props.$height}px`};
+  height: ${props => (props.$height ? `${props.$height}px` : 0)};
 
   width: 100%;
   overflow: hidden;
