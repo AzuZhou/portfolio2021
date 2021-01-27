@@ -42,7 +42,7 @@ const Title = styled.h2`
   text-shadow: 0px 1px 2px white;
   font-size: ${fontSizes.mobile.subtitle};
   letter-spacing: 1px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.subtitle};

@@ -44,7 +44,7 @@ const SlideIn = ({ isVisible, from, gap, children }) => {
       config: { mass: 5, tension: 2000, friction: 200 },
       trail: 300 / items.length,
       unique: true,
-      reset: true,
+      delay: isVisible ? 300 : 0,
     }
   )
 

@@ -17,6 +17,7 @@ export default ({ isVisible, gap, children }) => {
     x: isVisible ? 0 : 100,
     height: isVisible ? "auto" : 0,
     from: { opacity: 0, x: 100, height: 0 },
+    delay: isVisible ? 300 : 0,
   })
 
   return trail.map(({ x, ...rest }, index) => (

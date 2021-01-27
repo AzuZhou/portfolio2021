@@ -54,7 +54,7 @@ const Transition = ({ isVisible, children, color }) => {
       leave: { opacity: 0, transform: "scale(0)" },
       trail: 300 / items.length,
       unique: true,
-      reset: true,
+      delay: isVisible ? 300 : 0,
     }
   )
 
