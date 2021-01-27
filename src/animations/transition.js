@@ -18,10 +18,10 @@ const Container = styled(a.div)`
 `
 
 const ItemContainer = styled(a.div)`
-  border: 1px solid white;
+  border: 2px solid white;
   font-size: ${fontSizes.mobile.primaryText};
   font-weight: normal;
-  border-radius: 4px;
+  border-radius: 22px;
   display: flex;
   justify-content: center;
   align-items: center;

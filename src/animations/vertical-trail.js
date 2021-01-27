@@ -3,36 +3,33 @@ import styled from "styled-components"
 import { useTrail, a } from "react-spring"
 
 const Container = styled(a.div)`
-  height: ${props => `${props.$lineHeight}px`};
-  overflow: hidden;
-
-  > div {
-    overflow: hidden;
+  & ~ div {
+    margin-top: ${props => `${props.$gap}px`};
   }
 `
 
-export default ({ isVisible, lineHeight, children }) => {
+export default ({ isVisible, gap, children }) => {
   const items = React.Children.toArray(children)
 
   const trail = useTrail(items.length, {
     delay: 300,
     config: { mass: 5, tension: 2000, friction: 200 },
     opacity: isVisible ? 1 : 0,
-    x: isVisible ? 0 : lineHeight,
-    height: isVisible ? lineHeight : 0,
-    from: { opacity: 0, x: lineHeight, height: 0 },
+    x: isVisible ? 0 : 100,
+    height: isVisible ? "auto" : 0,
+    from: { opacity: 0, x: 100, height: 0 },
   })
 
-  return trail.map(({ x, height, ...rest }, index) => (
+  return trail.map(({ x, ...rest }, index) => (
     <Container
-      $lineHeight={lineHeight}
+      $gap={gap}
       key={items[index].key}
       style={{
         ...rest,
-        transform: x.interpolate(x => `translate3d(0, ${x}px, 0)`),
+        transform: x.interpolate(x => `translate3d(0, ${x}%, 0)`),
       }}
     >
-      <a.div style={{ height }}>{items[index]}</a.div>
+      {items[index]}
     </Container>
   ))
 }

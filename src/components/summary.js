@@ -39,7 +39,7 @@ const SectionContainer = styled.div`
 const Summary = () => (
   <Container>
     <SectionContainer>
-      <Section animation="verticalTrail" lineHeight={60}>
+      <Section animation="verticalTrail" gap={10}>
         <p>
           Welcome to my <strong>portfolio</strong>,
         </p>

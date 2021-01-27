@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { v4 } from "uuid"
 
 import Section from "./shared/section"
-import Box from "./shared/box"
+import Box from "./box"
 
 import { colors } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"

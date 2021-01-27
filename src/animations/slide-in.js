@@ -7,6 +7,7 @@ import useHeight from "../hooks/useHeight"
 const Container = styled(a.div)`
   position: relative;
   height: ${props => `${props.$height}px`};
+
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -20,7 +21,7 @@ const Container = styled(a.div)`
 
 const SlideIn = ({ isVisible, from, gap, children }) => {
   const items = React.Children.toArray(children)
-  const [heightRef, height] = useHeight(true)
+  const [heightRef, height] = useHeight(isVisible)
 
   const animation = {
     left: {

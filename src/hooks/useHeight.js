@@ -1,6 +1,6 @@
 import React, { useRef, useState, useLayoutEffect } from "react"
 
-const useHeight = (on = true) => {
+const useHeight = (on = false) => {
   const ref = useRef()
   const [height, set] = useState(0)
   const heightRef = useRef(height)

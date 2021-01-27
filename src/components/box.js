@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import ThreeD from "../../animations/three-d"
+import ThreeD from "../animations/three-d"
 
 const Container = styled.div`
   background-color: white;
   width: 300px;
   height: 300px;
+  border-radius: 4px;
 `
 
 const Box = ({ name, imgUrl, id }) => (
