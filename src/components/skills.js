@@ -41,6 +41,7 @@ const Skills = () => (
     <SectionContainer>
       <Section
         title="Skills"
+        subtitle="Being a self-taught programmer, I relied heavily on platforms such as freeCodeCamp and Udemy, as well as the community around me, to familiarize myself with all these state of the art technologies."
         alignment="flex-start"
         animation="transition"
         color={colors.GREY}

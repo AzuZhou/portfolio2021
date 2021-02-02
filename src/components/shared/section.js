@@ -28,7 +28,6 @@ const Container = styled.div`
   width: 100%;
 
   ${desktopBreakpoint} {
-    width: 100%;
     align-items: ${props =>
       props.$alignment === "flex-start"
         ? props.$alignment
@@ -40,7 +39,6 @@ const Container = styled.div`
 
 const Title = styled.h2`
   font-size: ${fontSizes.mobile.subtitle};
-  margin-bottom: 60px;
   text-transform: uppercase;
   color: ${props => props.$color ?? colors.GREY};
   mix-blend-mode: color-dodge;
@@ -63,22 +61,37 @@ const Square = styled.div`
   background-color: ${props => props.$background};
   border-radius: 4px;
 
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1200px) {
     display: initial;
   }
 `
 
 const TitleContainer = styled.div`
   position: relative;
+  margin-bottom: 60px;
+`
+
+const Subtitle = styled.p`
+  margin-bottom: ${props => (props.$extraMargin ? "100px" : "40px")};
+  font-size: ${fontSizes.mobile.primaryText};
+  color: ${colors.GREY};
+  text-align: center;
+
+  ${desktopBreakpoint} {
+    font-size: ${fontSizes.desktop.primaryText};
+    text-align: ${props => props.$textAlign ?? "initial"};
+  }
 `
 
 const Section = ({
   children,
   title,
+  subtitle,
   animation,
   alignment,
   direction,
   titleColor,
+  extraMargin,
   ...animationProps
 }) => {
   const Animation = animation ? animations[animation] || null : null
@@ -100,6 +113,17 @@ const Section = ({
                 )}
                 <Title $color={titleColor}>{title}</Title>
               </TitleContainer>
+            </FadeIn>
+          )}
+
+          {subtitle && (
+            <FadeIn isVisible={isVisible}>
+              <Subtitle
+                $textAlign={titleColor === colors.PINK ? "right" : "left"}
+                $extraMargin={extraMargin}
+              >
+                {subtitle}
+              </Subtitle>
             </FadeIn>
           )}
 

@@ -50,6 +50,8 @@ const Projects = () => (
         alignment="flex-end"
         animation="horizontalTrail"
         titleColor={colors.PINK}
+        subtitle="In my career, I have been part of numerous projects, adding features, fixing bugs, and working closely with designers. I have experience with responsive and cross-browser compatible applications and I am confident with my ability to create dynamic feeling pages that look just like the design."
+        extraMargin
       >
         {projects.map(props => (
           <Box key={props.id} {...props} />

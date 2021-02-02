@@ -52,7 +52,9 @@ const Summary = () => (
         <Name>Azucena Zhou</Name>
         <Role>Frontend Developer</Role>
         <Quote>
-          "Started coding for fun, but I stuck around for the challenge"
+          "I describe my job as finding the balance between different aspects of
+          software development so that the quality of the outcome stays
+          consistent"
         </Quote>
       </Section>
     </SectionContainer>

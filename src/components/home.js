@@ -11,13 +11,13 @@ import { desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 2fr repeat(3, 3fr) 2fr;
+  grid-template-rows: 2fr repeat(3, 3fr) 1fr;
 
   > section {
     padding: 60px 0;
 
     ${desktopBreakpoint} {
-      padding: 80px 0;
+      padding: 100px 0;
     }
   }
 `
