@@ -18,22 +18,21 @@ const Container = styled(a.div)`
 `
 
 const ItemContainer = styled(a.div)`
-  border: 2px solid white;
+  border: 2px solid ${props => props.$color};
   font-size: ${fontSizes.mobile.primaryText};
-  font-weight: normal;
-  border-radius: 22px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  color: white;
-  background-color: ${props => props.$color};
+  background-color: white;
+  color: ${props => props.$color};
   will-change: opacity, transform;
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 
   &:hover {
-    background-color: white;
-    color: ${props => props.$color};
+    background-color: ${props => props.$color};
+    color: white;
   }
 
   ${desktopBreakpoint} {

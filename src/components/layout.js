@@ -9,11 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
-import "@fontsource/yeseva-one"
-import "@fontsource/nunito/300.css"
-import "@fontsource/nunito"
+import "@fontsource/montserrat/500.css"
+import "@fontsource/playfair-display"
 
 import Header from "./header"
+
+import { colors } from "../styled/constants"
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -22,12 +23,12 @@ html {
 }
 
 body {
-  font-family: "Nunito";
-  font-weight: 300;
+  font-family: "Montserrat";
+  font-weight: 500;
   margin: 0;
   min-height: 100%;
   display: flex;
-  color: white;
+  color: ${colors.GREY};
 }
 
 #___gatsby, #gatsby-focus-wrapper {
@@ -37,14 +38,29 @@ body {
   flex-direction: column;
 }
 
+#gatsby-focus-wrapper {
+  padding-top: 20px;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Yeseve One";
+  font-family: "Playfair Display";
+  letter-spacing: 1px;
   margin: 0;
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
 
 button {

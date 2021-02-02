@@ -3,11 +3,10 @@ import styled from "styled-components"
 
 import Section from "./shared/section"
 
-import { colors, fontSizes } from "../styled/constants"
+import { fontSizes } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.section`
-  background-color: ${colors.SANDY_BROWN};
   display: flex;
   justify-content: center;
   ${responsivePadding}
@@ -20,35 +19,41 @@ const SectionContainer = styled.div`
   align-items: center;
 
   p {
-    text-shadow: 0px 1px 2px white;
     margin: 0;
-    font-family: "Yeseve One";
-    letter-spacing: 1.2px;
-    font-size: ${fontSizes.mobile.title};
+    text-align: center;
+    transform: scale(1.2);
   }
 
   ${desktopBreakpoint} {
     width: 80%;
-
-    p {
-      font-size: ${fontSizes.desktop.title};
-    }
   }
+`
+
+const Name = styled.p`
+  font-family: "Playfair Display";
+  text-transform: uppercase;
+  font-size: ${fontSizes.desktop.primaryText};
+`
+
+const Role = styled.p`
+  font-family: "Playfair Display";
+  text-transform: uppercase;
+  font-size: ${fontSizes.desktop.title};
+`
+
+const Quote = styled.p`
+  font-size: ${fontSizes.desktop.secondaryText};
 `
 
 const Summary = () => (
   <Container>
     <SectionContainer>
       <Section animation="verticalTrail" gap={10}>
-        <p>
-          Welcome to my <strong>portfolio</strong>,
-        </p>
-        <p>
-          my name is <strong>Azucena Zhou</strong>
-        </p>
-        <p>
-          and I am a <strong>frontend developer</strong>.
-        </p>
+        <Name>Azucena Zhou</Name>
+        <Role>Frontend Developer</Role>
+        <Quote>
+          "Started coding for fun, but I stuck around for the challenge"
+        </Quote>
       </Section>
     </SectionContainer>
   </Container>

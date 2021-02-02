@@ -8,7 +8,6 @@ import { colors, fontSizes } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.section`
-  background-color: ${colors.MAASTRICHT_BLUE};
   display: flex;
   justify-content: center;
   ${responsivePadding}
@@ -25,7 +24,12 @@ const IconContainer = styled.div`
 
   svg {
     font-size: ${fontSizes.mobile.title};
-    fill: white;
+    fill: ${colors.GREY};
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   ${desktopBreakpoint} {

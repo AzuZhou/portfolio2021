@@ -21,7 +21,6 @@ const technologies = [
 ]
 
 const Container = styled.section`
-  background-color: ${colors.SUNSET_ORANGE};
   display: flex;
   justify-content: center;
   ${responsivePadding}
@@ -44,7 +43,8 @@ const Skills = () => (
         title="Skills"
         alignment="flex-start"
         animation="transition"
-        color={colors.SUNSET_ORANGE}
+        color={colors.GREY}
+        titleColor={colors.BLUE}
       >
         {technologies.map(({ id, text }) => (
           <span key={v4()} id={id}>

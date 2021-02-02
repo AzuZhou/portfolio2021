@@ -14,20 +14,19 @@ const projects = [
     imgUrl: "",
     id: v4(),
   },
-  {
-    name: "Real-time Chat",
-    imgUrl: "",
-    id: v4(),
-  },
-  {
-    name: "Instagram Clone",
-    imgUrl: "",
-    id: v4(),
-  },
+  // {
+  //   name: "Real-time Chat",
+  //   imgUrl: "",
+  //   id: v4(),
+  // },
+  // {
+  //   name: "Instagram Clone",
+  //   imgUrl: "",
+  //   id: v4(),
+  // },
 ]
 
 const Container = styled.section`
-  background-color: ${colors.ENGLISH_VIOLET};
   display: flex;
   justify-content: center;
   ${responsivePadding}
@@ -50,6 +49,7 @@ const Projects = () => (
         title="Projects"
         alignment="flex-end"
         animation="horizontalTrail"
+        titleColor={colors.PINK}
       >
         {projects.map(props => (
           <Box key={props.id} {...props} />

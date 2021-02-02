@@ -5,42 +5,29 @@ import Summary from "./summary"
 import Skills from "./skills"
 import Projects from "./projects"
 import Miscellaneous from "./miscellaneous"
-import Snake from "./shared/snake"
 import Contact from "./contact"
 
-import { colors } from "../styled/constants"
+import { desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
+  grid-template-rows: 2fr repeat(3, 3fr) 2fr;
+
+  > section {
+    padding: 60px 0;
+
+    ${desktopBreakpoint} {
+      padding: 80px 0;
+    }
+  }
 `
 
 const Home = () => (
   <Container>
     <Summary />
-    <Snake
-      degrees="-175deg"
-      firstColor={colors.SANDY_BROWN}
-      secondColor={colors.SUNSET_ORANGE}
-    />
     <Skills />
-    <Snake
-      degrees="175deg"
-      firstColor={colors.SUNSET_ORANGE}
-      secondColor={colors.ENGLISH_VIOLET}
-    />
     <Projects />
-    <Snake
-      degrees="-175deg"
-      firstColor={colors.ENGLISH_VIOLET}
-      secondColor={colors.SPACE_CADET}
-    />
     <Miscellaneous />
-    <Snake
-      degrees="175deg"
-      firstColor={colors.SPACE_CADET}
-      secondColor={colors.MAASTRICHT_BLUE}
-    />
     <Contact />
   </Container>
 )

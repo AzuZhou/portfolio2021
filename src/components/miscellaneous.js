@@ -27,7 +27,6 @@ const miscellaneous = [
 ]
 
 const Container = styled.section`
-  background-color: ${colors.SPACE_CADET};
   display: flex;
   justify-content: center;
   ${responsivePadding}
@@ -47,15 +46,11 @@ const Note = styled(a.div)`
   position: absolute;
   white-space: nowrap;
   will-change: left, opacity;
-  background-color: white;
-  color: ${colors.SPACE_CADET};
-  padding: 10px;
-  border-radius: 4px;
+  color: ${colors.GREY};
   text-align: center;
   font-size: ${fontSizes.mobile.primaryText};
 
   ${desktopBreakpoint} {
-    padding: 10px 20px;
     font-size: ${fontSizes.desktop.primaryText};
   }
 `
@@ -70,7 +65,8 @@ const Miscellaneous = () => (
         alignment="flex-start"
         animation="slideIn"
         from="left"
-        gap={20}
+        gap={30}
+        titleColor={colors.BLUE}
       >
         {miscellaneous.map(({ id, text }) => (
           <Note id={id} key={v4()}>

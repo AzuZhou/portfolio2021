@@ -1,10 +1,7 @@
 export const colors = {
-  MAASTRICHT_BLUE: "#08183A",
-  SPACE_CADET: "#152852",
-  ENGLISH_VIOLET: "#4B3D60",
-  SUNSET_ORANGE: "#FD5E53",
-  SANDY_BROWN: "#FC9C54",
-  SHADY: "#FFE373",
+  GREY: "rgb(192,192,192)",
+  PINK: "rgb(244, 194, 194)",
+  BLUE: "rgb(137, 207, 240)",
 }
 
 export const fontSizes = {
@@ -16,7 +13,7 @@ export const fontSizes = {
   },
   mobile: {
     title: "36px",
-    subtitle: "24",
+    subtitle: "24px",
     primaryText: "14px",
     secondaryText: "10px",
   },

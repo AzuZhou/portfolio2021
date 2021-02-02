@@ -8,7 +8,7 @@ import HorizontalTrail from "../../animations/horizontal-trail"
 import SlideIn from "../../animations/slide-in"
 import Transition from "../../animations/transition"
 
-import { fontSizes } from "../../styled/constants"
+import { fontSizes, colors } from "../../styled/constants"
 import { desktopBreakpoint } from "../../styled/styles"
 
 const animations = {
@@ -39,14 +39,37 @@ const Container = styled.div`
 `
 
 const Title = styled.h2`
-  text-shadow: 0px 1px 2px white;
   font-size: ${fontSizes.mobile.subtitle};
-  letter-spacing: 1px;
   margin-bottom: 60px;
+  text-transform: uppercase;
+  color: ${props => props.$color ?? colors.GREY};
+  mix-blend-mode: color-dodge;
+  display: flex;
+  justify-content: center;
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.subtitle};
   }
+`
+
+const Square = styled.div`
+  display: none;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  ${props => props.$to}: -75px;
+  top: -75px;
+  z-index: -1;
+  background-color: ${props => props.$background};
+  border-radius: 4px;
+
+  @media screen and (min-width: 1199px) {
+    display: initial;
+  }
+`
+
+const TitleContainer = styled.div`
+  position: relative;
 `
 
 const Section = ({
@@ -55,6 +78,7 @@ const Section = ({
   animation,
   alignment,
   direction,
+  titleColor,
   ...animationProps
 }) => {
   const Animation = animation ? animations[animation] || null : null
@@ -65,7 +89,17 @@ const Section = ({
         <Container $alignment={alignment} $direction={direction}>
           {title && (
             <FadeIn isVisible={isVisible} alignment={alignment}>
-              <Title>{title}</Title>
+              <TitleContainer>
+                {titleColor && (
+                  <Square
+                    $background={
+                      titleColor === colors.PINK ? colors.BLUE : colors.PINK
+                    }
+                    $to={titleColor === colors.PINK ? "right" : "left"}
+                  />
+                )}
+                <Title $color={titleColor}>{title}</Title>
+              </TitleContainer>
             </FadeIn>
           )}
 
