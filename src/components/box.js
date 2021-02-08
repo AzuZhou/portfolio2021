@@ -30,9 +30,9 @@ const HorizontalRectangle = styled.div`
   width: 102%;
 `
 
-const Box = ({ name, imgUrl, id }) => (
-  <ThreeD elementId={id}>
-    <Container id={id}>
+const Box = ({ name }) => (
+  <ThreeD>
+    <Container>
       <VerticalRectangle />
       <HorizontalRectangle />
       {name}

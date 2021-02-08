@@ -58,18 +58,19 @@ const Note = styled(a.div)`
 // TODO: handle responsive
 
 const Miscellaneous = () => (
-  <Container>
+  <Container id="miscellaneous">
     <SectionContainer>
       <Section
         title="Miscellaneous"
         alignment="flex-start"
         animation="slideIn"
         from="left"
-        gap={30}
+        gap={20}
+        height={40}
         titleColor={colors.BLUE}
       >
         {miscellaneous.map(({ id, text }) => (
-          <Note id={id} key={v4()}>
+          <Note key={v4()} id={id}>
             {text}
           </Note>
         ))}

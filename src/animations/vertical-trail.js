@@ -12,7 +12,11 @@ export default ({ isVisible, gap, children }) => {
   const items = React.Children.toArray(children)
 
   const trail = useTrail(items.length, {
-    config: { mass: 5, tension: 2000, friction: 200 },
+    config: {
+      mass: 5,
+      tension: 1000,
+      friction: 300,
+    },
     opacity: isVisible ? 1 : 0,
     x: isVisible ? 0 : 100,
     height: isVisible ? "auto" : 0,

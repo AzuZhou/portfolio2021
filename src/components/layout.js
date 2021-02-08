@@ -9,12 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
-import "@fontsource/montserrat/500.css"
+import "@fontsource/montserrat"
 import "@fontsource/playfair-display"
 
 import Header from "./header"
 
 import { colors } from "../styled/constants"
+import { desktopBreakpoint } from "../styled/styles"
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -24,7 +25,6 @@ html {
 
 body {
   font-family: "Montserrat";
-  font-weight: 500;
   margin: 0;
   min-height: 100%;
   display: flex;
@@ -39,13 +39,17 @@ body {
 }
 
 #gatsby-focus-wrapper {
-  padding-top: 20px;
   align-items: center;
 }
 
 main {
   width: 100%;
   max-width: 1200px;
+  margin-top: 88px;
+
+  ${desktopBreakpoint} {
+    margin-top: 96px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
 p {

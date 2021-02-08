@@ -46,12 +46,16 @@ const Contact = () => (
     <SectionContainer>
       <Section animation="verticalTrail" direction="row-reverse">
         <IconContainer>
-          <a href="https://github.com/AzuZhou" target="_blank">
+          <a href="https://github.com/AzuZhou" target="_blank" rel="noreferrer">
             <GithubOutlined />
           </a>
         </IconContainer>
         <IconContainer>
-          <a href="https://linkedin.com/in/azu-zhou" target="_blank">
+          <a
+            href="https://linkedin.com/in/azu-zhou"
+            target="_blank"
+            rel="noreferrer"
+          >
             <LinkedinOutlined />
           </a>
         </IconContainer>

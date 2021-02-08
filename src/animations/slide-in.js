@@ -2,12 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { useTransition, a } from "react-spring"
 
-import useHeight from "../hooks/useHeight"
-
 const Container = styled(a.div)`
   position: relative;
   height: ${props => (props.$height ? `${props.$height}px` : 0)};
-
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -19,9 +16,8 @@ const Container = styled(a.div)`
   }
 `
 
-const SlideIn = ({ isVisible, from, gap, children }) => {
+const SlideIn = ({ isVisible, from, gap, height, children }) => {
   const items = React.Children.toArray(children)
-  const [heightRef, height] = useHeight(isVisible)
 
   const animation = {
     left: {
@@ -52,7 +48,6 @@ const SlideIn = ({ isVisible, from, gap, children }) => {
     <Container key={key} $height={height} $gap={gap}>
       {React.cloneElement(item, {
         style: props,
-        ref: heightRef,
       })}
     </Container>
   ))

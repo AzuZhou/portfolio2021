@@ -1,7 +1,8 @@
+import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import PropTypes from "prop-types"
-import React from "react"
+import "@fontsource/montserrat/500.css"
 
 import Menu from "./menu"
 
@@ -9,12 +10,21 @@ import { colors, fontSizes } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.header`
+  position: fixed;
+  z-index: 2;
+  background: white;
   box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${responsivePadding}
+  padding: 20px 20px 0 20px;
+  padding: 20px;
+
+  @media screen and (min-width: 960px) {
+    padding: 20px 40px 0 40px;
+    padding: 20px 40px;
+  }
 `
 
 const Logo = styled(Link)`
@@ -29,11 +39,56 @@ const Logo = styled(Link)`
   }
 `
 
+const Navbar = styled.nav`
+  display: none;
+
+  > div ~ div {
+    margin-left: 40px;
+  }
+
+  ${desktopBreakpoint} {
+    display: flex;
+  }
+`
+
+const NavbarItem = styled.div`
+  padding: 10px;
+
+  a {
+    text-transform: uppercase;
+    font-size: ${fontSizes.mobile.secondaryText};
+    color: ${colors.GREY};
+    font-weight: 500;
+
+    & ~ a {
+      margin-left: 40px;
+    }
+
+    ${desktopBreakpoint} {
+      font-size: ${fontSizes.desktop.secondaryText};
+    }
+  }
+`
+
 const Header = ({ siteTitle }) => (
   <Container>
     <Logo to="/">
       <h1>{siteTitle}</h1>
     </Logo>
+
+    <Navbar>
+      <NavbarItem>
+        <a href="#skills">Skills</a>
+      </NavbarItem>
+
+      <NavbarItem>
+        <a href="#projects">Projects</a>
+      </NavbarItem>
+
+      <NavbarItem>
+        <a href="#miscellaneous">Miscellaneous</a>
+      </NavbarItem>
+    </Navbar>
 
     <Menu />
   </Container>

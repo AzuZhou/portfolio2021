@@ -17,6 +17,7 @@ const technologies = [
   { id: v4(), text: "Redux" },
   { id: v4(), text: "TypeScript" },
   { id: v4(), text: "Gatsby" },
+  { id: v4(), text: "Next" },
   { id: v4(), text: "Git" },
 ]
 
@@ -37,7 +38,7 @@ const SectionContainer = styled.div`
 `
 
 const Skills = () => (
-  <Container>
+  <Container id="skills">
     <SectionContainer>
       <Section
         title="Skills"

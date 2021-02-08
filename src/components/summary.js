@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import "@fontsource/montserrat/500.css"
 
 import Section from "./shared/section"
 
@@ -19,9 +20,9 @@ const SectionContainer = styled.div`
   align-items: center;
 
   p {
-    margin: 0;
     text-align: center;
     transform: scale(1.2);
+    font-weight: 500;
   }
 
   ${desktopBreakpoint} {
@@ -42,6 +43,7 @@ const Role = styled.p`
 `
 
 const Quote = styled.p`
+  padding-top: 10px;
   font-size: ${fontSizes.desktop.secondaryText};
 `
 

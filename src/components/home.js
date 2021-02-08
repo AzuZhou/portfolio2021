@@ -17,7 +17,7 @@ const Container = styled.div`
     padding: 60px 0;
 
     ${desktopBreakpoint} {
-      padding: 100px 0;
+      padding: 80px 0;
     }
   }
 `

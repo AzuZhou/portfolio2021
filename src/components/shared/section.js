@@ -76,6 +76,7 @@ const Subtitle = styled.p`
   font-size: ${fontSizes.mobile.primaryText};
   color: ${colors.GREY};
   text-align: center;
+  line-height: 30px;
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.primaryText};
