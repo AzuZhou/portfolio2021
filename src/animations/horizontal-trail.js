@@ -2,19 +2,28 @@ import React, { useRef } from "react"
 import styled from "styled-components"
 import { useTrail, useChain, useSpring, a } from "react-spring"
 
+import { desktopBreakpoint } from "../styled/styles"
+
 const Grid = styled(a.div)`
   overflow: hidden;
   display: grid;
-  justify-content: end;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-areas:
-    ". . . . d1 d1 d1"
-    ". . . . d1 d1 d1"
-    "d2 d2 d2 . d1 d1 d1"
-    "d2 d2 d2 . . . ."
-    "d2 d2 d2 . d3 d3 d3"
-    ". . . . d3 d3 d3"
-    ". . . . d3 d3 d3";
+  grid-template-areas: "d1" "d2" "d3";
+  grid-gap: 30px;
+
+  // TODO: make dynamic
+
+  ${desktopBreakpoint} {
+    justify-content: end;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas:
+      ". . . . d1 d1 d1"
+      ". . . . d1 d1 d1"
+      "d2 d2 d2 . d1 d1 d1"
+      "d2 d2 d2 . . . ."
+      "d2 d2 d2 . d3 d3 d3"
+      ". . . . d3 d3 d3"
+      ". . . . d3 d3 d3";
+  }
 `
 
 // TODO: make grid dynamic and handle responsive

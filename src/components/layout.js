@@ -45,10 +45,10 @@ body {
 main {
   width: 100%;
   max-width: 1200px;
-  margin-top: 88px;
+  margin-top: 90px;
 
   ${desktopBreakpoint} {
-    margin-top: 96px;
+    margin-top: 98px;
   }
 }
 
@@ -92,7 +92,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata?.title || `AZ`} />
+      <Header siteTitle={data.site.siteMetadata?.title} />
       <main>{children}</main>
     </>
   )

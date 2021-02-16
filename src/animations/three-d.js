@@ -20,8 +20,7 @@ export default ({ children }) => {
     const height = element.offsetHeight
     const width = element.offsetWidth
 
-    const result = [-(y - height / 2) / 20, (x - width / 2) / 20, 1.1]
-    return result
+    return [-(y - height / 2) / 20, (x - width / 2) / 20, 1.1]
   }
 
   return (

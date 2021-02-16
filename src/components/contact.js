@@ -14,13 +14,14 @@ const Container = styled.section`
 `
 
 const SectionContainer = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
 `
 
 const IconContainer = styled.div`
-  padding: 40px 0;
+  height: 38px;
+  padding: 0 40px;
 
   svg {
     font-size: ${fontSizes.mobile.title};
@@ -33,6 +34,7 @@ const IconContainer = styled.div`
   }
 
   ${desktopBreakpoint} {
+    height: 44px;
     padding: 0 60px;
 
     svg {

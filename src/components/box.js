@@ -8,8 +8,8 @@ const Container = styled.div`
   background-color: white;
   border: 2px solid ${colors.GREY};
   color: white;
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   border-radius: 4px;
   position: relative;
   display: flex;

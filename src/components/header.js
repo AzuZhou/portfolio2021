@@ -99,7 +99,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `AZ`,
 }
 
 export default Header

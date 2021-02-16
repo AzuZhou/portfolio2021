@@ -21,12 +21,7 @@ const SectionContainer = styled.div`
 
   p {
     text-align: center;
-    transform: scale(1.2);
     font-weight: 500;
-  }
-
-  ${desktopBreakpoint} {
-    width: 80%;
   }
 `
 
@@ -43,8 +38,13 @@ const Role = styled.p`
 `
 
 const Quote = styled.p`
+  display: none;
   padding-top: 10px;
   font-size: ${fontSizes.desktop.secondaryText};
+
+  ${desktopBreakpoint} {
+    display: initial;
+  }
 `
 
 const Summary = () => (

@@ -33,11 +33,17 @@ const MenuIconBar = styled.div`
 const MenuDropdown = styled.nav`
   position: absolute;
   width: 100%;
-  height: calc(100vh - 88px);
-  top: 88px;
-  left: 0;
+  height: calc(100vh - 90px);
+  top: 90px;
+  left: 100%;
   background-color: white;
-  transform: translateY(${props => (props.$isDropdownOpen ? 0 : "-100%")});
+  left: ${props => (props.$isDropdownOpen ? 0 : "100%")};
+  transition: left 0.3s ease-in-out;
+
+  ${desktopBreakpoint} {
+    height: calc(100vh - 98px);
+    top: 98px;
+  }
 `
 
 const MenuItem = styled.div`
@@ -69,21 +75,16 @@ const Underline = styled.div`
 const Menu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-  // useEffect(() => {
-  //   if (isDropdownOpen) {
-  //   }
-  // }, [isDropdownOpen])
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.body.style.overflowY = "hidden"
+    } else {
+      document.body.style.overflowY = "auto"
+    }
+  }, [isDropdownOpen])
 
   const handleDropdown = () => setIsDropdownOpen(prev => !prev)
 
-  const handleClick = () => {
-    if (isDropdownOpen) {
-      document.body.style.overflow = "auto"
-    } else {
-      document.body.style.overflow = "hidden"
-    }
-    handleDropdown()
-  }
   return (
     <Container>
       <MenuIcon onClick={handleDropdown}>
@@ -95,7 +96,7 @@ const Menu = () => {
       <MenuDropdown $isDropdownOpen={isDropdownOpen}>
         <MenuItem>
           <div>
-            <a href="#skills" onClick={handleClick}>
+            <a href="#skills" onClick={handleDropdown}>
               Skills
             </a>
             <Underline />
@@ -104,7 +105,7 @@ const Menu = () => {
 
         <MenuItem>
           <div>
-            <a href="#projects" onClick={handleClick}>
+            <a href="#projects" onClick={handleDropdown}>
               Projects
             </a>
             <Underline />
@@ -113,7 +114,7 @@ const Menu = () => {
 
         <MenuItem>
           <div>
-            <a href="#miscellaneous" onClick={handleClick}>
+            <a href="#miscellaneous" onClick={handleDropdown}>
               Miscellaneous
             </a>
             <Underline />

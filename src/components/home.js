@@ -7,16 +7,15 @@ import Projects from "./projects"
 import Miscellaneous from "./miscellaneous"
 import Contact from "./contact"
 
-import { desktopBreakpoint } from "../styled/styles"
-
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 2fr repeat(3, 3fr) 1fr;
+  /* grid-template-rows: 2fr repeat(3, 3fr) 1fr; */
 
   > section {
-    padding: 60px 0;
+    min-height: 400px;
+    padding: 60px 30px;
 
-    ${desktopBreakpoint} {
+    @media screen and (min-width: 1200px) {
       padding: 80px 0;
     }
   }
