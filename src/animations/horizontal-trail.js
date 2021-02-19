@@ -6,14 +6,14 @@ import { desktopBreakpoint } from "../styled/styles"
 
 const Grid = styled(a.div)`
   overflow: hidden;
-  display: grid;
+  /* display: grid;
   grid-template-areas: "d1" "d2" "d3";
-  grid-gap: 30px;
+  grid-gap: 30px; */
 
   // TODO: make dynamic
 
   ${desktopBreakpoint} {
-    justify-content: end;
+    /* justify-content: end;
     grid-template-columns: repeat(7, 1fr);
     grid-template-areas:
       ". . . . d1 d1 d1"
@@ -22,7 +22,10 @@ const Grid = styled(a.div)`
       "d2 d2 d2 . . . ."
       "d2 d2 d2 . d3 d3 d3"
       ". . . . d3 d3 d3"
-      ". . . . d3 d3 d3";
+      ". . . . d3 d3 d3"; */
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
   }
 `
 
@@ -54,7 +57,7 @@ export default ({ isVisible, children }) => {
   return (
     <Grid style={props}>
       {trail.map(({ y, ...rest }, index) => {
-        const gridArea = `d${index + 1}`
+        // const gridArea = `d${index + 1}`
 
         return (
           <a.div
@@ -62,7 +65,7 @@ export default ({ isVisible, children }) => {
             style={{
               ...rest,
               transform: y.interpolate(y => `translate3d(${y}%, 0, 0)`),
-              gridArea,
+              // gridArea,
             }}
           >
             {items[index]}

@@ -6,13 +6,7 @@ import Section from "./shared/section"
 
 import BugFixing from "../images/fixing-bugs.svg"
 import Mobile from "../images/mobile-development.svg"
-import Devices from "../images/devices.svg"
 import Todo from "../images/to-do.svg"
-
-import VideoStreaming from "../images/video-streaming.svg"
-import PieceFitting from "../images/fitting-piece.svg"
-import Certification from "../images/certification.svg"
-
 import Focus from "../images/dev-focus.svg"
 
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
@@ -88,7 +82,7 @@ const Items = styled.div`
 `
 
 const Hero = styled(Focus)`
-  margin-top: 40px;
+  width: 100%;
 `
 
 const Skills = () => (
@@ -125,7 +119,10 @@ const Skills = () => (
         ))}
       </Section>
 
-      <Section>
+      <Section
+        subtitle="Soft skills. Being a self-taught programmer, I relied heavily on platforms such as freeCodeCamp and Udemy, as well as the community around me, to familiarize myself with all these state of the art technologies."
+        alignment="flex-start"
+      >
         <Hero />
       </Section>
     </SectionContainer>

@@ -46,17 +46,6 @@ const ItemContainer = styled(a.div)`
 const Transition = ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
 
-  // const { technologies, skills } = items.reduce(
-  //   (acc, curr) => {
-  //     if (curr.type === "span") {
-  //       return { ...acc, technologies: [...acc.technologies, curr] }
-  //     } else {
-  //       return { ...acc, skills: [...acc.skills, curr] }
-  //     }
-  //   },
-  //   { technologies: [], skills: [] }
-  // )
-
   const transitions = useTransition(
     isVisible ? items : [],
     item => item.props.id,

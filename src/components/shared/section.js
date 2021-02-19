@@ -99,7 +99,6 @@ const Section = ({
   animation,
   alignment,
   direction,
-  titleColor,
   extraMargin,
   ...animationProps
 }) => {
