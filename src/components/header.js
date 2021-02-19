@@ -28,7 +28,7 @@ const Container = styled.header`
 `
 
 const Logo = styled(Link)`
-  color: ${colors.GREY};
+  color: ${colors.SECONDHAND_GREY};
 
   > h1 {
     font-size: ${fontSizes.mobile.title};
@@ -57,7 +57,7 @@ const NavbarItem = styled.div`
   a {
     text-transform: uppercase;
     font-size: ${fontSizes.mobile.secondaryText};
-    color: ${colors.GREY};
+    color: ${colors.SECONDHAND_GREY};
     font-weight: 500;
 
     & ~ a {

@@ -40,7 +40,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: ${fontSizes.mobile.subtitle};
   text-transform: uppercase;
-  color: ${props => props.$color ?? colors.GREY};
+  color: ${colors.FRENCH_PINK};
   mix-blend-mode: color-dodge;
   display: flex;
   justify-content: center;
@@ -48,9 +48,13 @@ const Title = styled.h2`
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.subtitle};
   }
+
+  @media screen and (min-width: 1200px) {
+    color: ${colors.BLUEBERRY};
+  }
 `
 
-const Square = styled.div`
+const Circle = styled.div`
   display: none;
   position: absolute;
   height: 150px;
@@ -58,8 +62,11 @@ const Square = styled.div`
   ${props => props.$to}: -75px;
   top: -75px;
   z-index: -1;
-  background-color: ${props => props.$background};
-  border-radius: 4px;
+  background-color: ${colors.FRENCH_PINK};
+  border-radius: 75px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.08),
+    0 4px 4px rgba(0, 0, 0, 0.08), 0 6px 8px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.08);
 
   @media screen and (min-width: 1200px) {
     display: initial;
@@ -73,8 +80,9 @@ const TitleContainer = styled.div`
 
 const Subtitle = styled.p`
   margin-bottom: ${props => (props.$extraMargin ? "100px" : "40px")};
+  margin-top: ${props => (props.$isSubsection ? "40px" : 0)};
   font-size: ${fontSizes.mobile.primaryText};
-  color: ${colors.GREY};
+  color: ${colors.SECONDHAND_GREY};
   text-align: center;
   line-height: 30px;
 
@@ -104,15 +112,8 @@ const Section = ({
           {title && (
             <FadeIn isVisible={isVisible} alignment={alignment}>
               <TitleContainer>
-                {titleColor && (
-                  <Square
-                    $background={
-                      titleColor === colors.PINK ? colors.BLUE : colors.PINK
-                    }
-                    $to={titleColor === colors.PINK ? "right" : "left"}
-                  />
-                )}
-                <Title $color={titleColor}>{title}</Title>
+                <Circle $to={alignment === "flex-start" ? "left" : "right"} />
+                <Title>{title}</Title>
               </TitleContainer>
             </FadeIn>
           )}
@@ -120,8 +121,9 @@ const Section = ({
           {subtitle && (
             <FadeIn isVisible={isVisible}>
               <Subtitle
-                $textAlign={titleColor === colors.PINK ? "right" : "left"}
+                $textAlign={alignment === "flex-start" ? "left" : "right"}
                 $extraMargin={extraMargin}
+                $isSubsection={!title}
               >
                 {subtitle}
               </Subtitle>

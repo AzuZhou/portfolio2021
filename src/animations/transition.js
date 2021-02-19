@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useTransition, a } from "react-spring"
 
-import { fontSizes } from "../styled/constants"
+import { colors, fontSizes } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"
 
 const Container = styled(a.div)`
@@ -18,30 +18,44 @@ const Container = styled(a.div)`
 `
 
 const ItemContainer = styled(a.div)`
-  border: 2px solid ${props => props.$color};
   font-size: ${fontSizes.mobile.primaryText};
-  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  background-color: white;
-  color: ${props => props.$color};
+  background-color: ${colors.FRENCH_PINK};
+  color: white;
   will-change: opacity, transform;
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-
-  &:hover {
-    background-color: ${props => props.$color};
-    color: white;
-  }
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2px 2px rgba(0, 0, 0, 0.02),
+    0 4px 4px rgba(0, 0, 0, 0.02), 0 2px 8px rgba(0, 0, 0, 0.02),
+    0 8px 16px rgba(0, 0, 0, 0.02);
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.primaryText};
+    background-color: white;
+    color: ${colors.SECONDHAND_GREY};
+
+    &:hover {
+      background-color: ${colors.FRENCH_PINK};
+      color: white;
+    }
   }
 `
 
-const Transition = ({ isVisible, children, color }) => {
+const Transition = ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
+
+  // const { technologies, skills } = items.reduce(
+  //   (acc, curr) => {
+  //     if (curr.type === "span") {
+  //       return { ...acc, technologies: [...acc.technologies, curr] }
+  //     } else {
+  //       return { ...acc, skills: [...acc.skills, curr] }
+  //     }
+  //   },
+  //   { technologies: [], skills: [] }
+  // )
 
   const transitions = useTransition(
     isVisible ? items : [],
@@ -60,7 +74,7 @@ const Transition = ({ isVisible, children, color }) => {
   return (
     <Container>
       {transitions.map(({ item, key, props }) => (
-        <ItemContainer key={key} style={props} $color={color}>
+        <ItemContainer key={`${key}-transition`} style={props}>
           {item}
         </ItemContainer>
       ))}

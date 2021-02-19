@@ -28,7 +28,7 @@ body {
   margin: 0;
   min-height: 100%;
   display: flex;
-  color: ${colors.GREY};
+  color: ${colors.SECONDHAND_GREY};
 }
 
 #___gatsby, #gatsby-focus-wrapper {

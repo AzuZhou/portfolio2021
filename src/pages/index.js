@@ -1,23 +1,41 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import Home from "../components/home"
+import Summary from "../components/summary"
+import Skills from "../components/skills"
+import Projects from "../components/projects"
+import Miscellaneous from "../components/miscellaneous"
+import Contact from "../components/contact"
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > section {
+    min-height: 200px;
+    padding: 60px 30px;
+
+    @media screen and (min-width: 1200px) {
+      padding: 80px 0;
+    }
+  }
+`
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Home />
 
-    {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br /> */}
+    <Container>
+      <Summary />
+      <Skills />
+      <Projects />
+      <Miscellaneous />
+      <Contact />
+    </Container>
   </Layout>
 )
 

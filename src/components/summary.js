@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import "@fontsource/montserrat/500.css"
-
+import Image from "../images/working-late.svg"
 import Section from "./shared/section"
 
 import { fontSizes } from "../styled/constants"
@@ -37,7 +37,7 @@ const Role = styled.p`
   font-size: ${fontSizes.desktop.title};
 `
 
-const Quote = styled.p`
+const Text = styled.p`
   display: none;
   padding-top: 10px;
   font-size: ${fontSizes.desktop.secondaryText};
@@ -47,17 +47,25 @@ const Quote = styled.p`
   }
 `
 
+const Hero = styled(Image)`
+  margin-top: 40px;
+`
+
 const Summary = () => (
   <Container>
     <SectionContainer>
-      <Section animation="verticalTrail" gap={10}>
+      <Section
+      // animation="verticalTrail" gap={10}
+      >
         <Name>Azucena Zhou</Name>
         <Role>Frontend Developer</Role>
-        <Quote>
+
+        {/* <Text>
           "I describe my job as finding the balance between different aspects of
           software development so that the quality of the outcome stays
           consistent"
-        </Quote>
+        </Text> */}
+        <Hero />
       </Section>
     </SectionContainer>
   </Container>

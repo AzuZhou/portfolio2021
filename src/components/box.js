@@ -6,7 +6,7 @@ import { colors } from "../styled/constants"
 
 const Container = styled.div`
   background-color: white;
-  border: 2px solid ${colors.GREY};
+  border: 2px solid ${colors.SECONDHAND_GREY};
   color: white;
   width: 260px;
   height: 260px;

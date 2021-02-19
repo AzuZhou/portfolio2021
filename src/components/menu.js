@@ -24,7 +24,7 @@ const MenuIcon = styled.button`
 `
 
 const MenuIconBar = styled.div`
-  background-color: ${colors.GREY};
+  background-color: ${colors.SECONDHAND_GREY};
   box-shadow: 0px 1px 2px white;
   height: 3px;
   width: 40px;
@@ -56,7 +56,7 @@ const MenuItem = styled.div`
   a {
     text-transform: uppercase;
     font-size: ${fontSizes.mobile.primaryText};
-    color: ${colors.GREY};
+    color: ${colors.SECONDHAND_GREY};
     font-weight: 500;
 
     ${desktopBreakpoint} {
@@ -68,7 +68,7 @@ const MenuItem = styled.div`
 const Underline = styled.div`
   height: 3px;
   width: 100%;
-  background-color: ${colors.GREY};
+  background-color: ${colors.SECONDHAND_GREY};
   margin-top: 6px;
 `
 

@@ -46,7 +46,7 @@ const Note = styled(a.div)`
   position: absolute;
   white-space: nowrap;
   will-change: left, opacity;
-  color: ${colors.GREY};
+  color: ${colors.SECONDHAND_GREY};
   text-align: center;
   font-size: ${fontSizes.mobile.primaryText};
 

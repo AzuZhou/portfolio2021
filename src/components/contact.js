@@ -25,7 +25,7 @@ const IconContainer = styled.div`
 
   svg {
     font-size: ${fontSizes.mobile.title};
-    fill: ${colors.GREY};
+    fill: ${colors.SECONDHAND_GREY};
     transition: transform 0.3s ease-in-out;
 
     &:hover {
