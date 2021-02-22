@@ -41,6 +41,7 @@ const Role = styled.p`
 
 const Hero = styled(Image)`
   margin-top: 40px;
+  width: 100%;
 `
 
 const Summary = () => (

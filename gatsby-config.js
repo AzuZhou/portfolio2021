@@ -21,10 +21,10 @@ module.exports = {
         name: `Azucena Zhou`,
         short_name: `AZ`,
         start_url: `/`,
-        background_color: `#08183A`,
-        theme_color: `#08183A`,
+        background_color: `#4F86F7`,
+        theme_color: `#4F86F7`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/avatar.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,

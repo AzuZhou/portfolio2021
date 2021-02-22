@@ -7,7 +7,7 @@ import "@fontsource/montserrat/500.css"
 import Menu from "./menu"
 
 import { colors, fontSizes } from "../styled/constants"
-import { responsivePadding, desktopBreakpoint } from "../styled/styles"
+import { desktopBreakpoint } from "../styled/styles"
 
 const Container = styled.header`
   position: fixed;

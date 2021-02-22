@@ -83,7 +83,6 @@ const Miscellaneous = () => (
         from="left"
         gap={20}
         height={40}
-        titleColor={colors.BLUE}
       >
         {miscellaneous.map(({ id, text }) => (
           <Message key={id} id={id}>

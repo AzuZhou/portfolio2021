@@ -69,7 +69,6 @@ const IconContainer = styled.div`
 `
 
 const Hero = styled(Background)`
-  margin-top: 40px;
   width: 100%;
 `
 
