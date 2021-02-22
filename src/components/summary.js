@@ -1,11 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import "@fontsource/montserrat/500.css"
-import Image from "../images/working-late.svg"
+
 import Section from "./shared/section"
 
+import Image from "../images/working-late.svg"
+
 import { fontSizes } from "../styled/constants"
-import { responsivePadding, desktopBreakpoint } from "../styled/styles"
+import { responsivePadding } from "../styled/styles"
 
 const Container = styled.section`
   display: flex;
@@ -37,16 +39,6 @@ const Role = styled.p`
   font-size: ${fontSizes.desktop.title};
 `
 
-const Text = styled.p`
-  display: none;
-  padding-top: 10px;
-  font-size: ${fontSizes.desktop.secondaryText};
-
-  ${desktopBreakpoint} {
-    display: initial;
-  }
-`
-
 const Hero = styled(Image)`
   margin-top: 40px;
 `
@@ -59,12 +51,6 @@ const Summary = () => (
       >
         <Name>Azucena Zhou</Name>
         <Role>Frontend Developer</Role>
-
-        {/* <Text>
-          "I describe my job as finding the balance between different aspects of
-          software development so that the quality of the outcome stays
-          consistent"
-        </Text> */}
         <Hero />
       </Section>
     </SectionContainer>

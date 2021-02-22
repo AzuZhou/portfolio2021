@@ -11,7 +11,7 @@ import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 const miscellaneous = [
   {
     id: v4(),
-    text: "I am vegan and I love ramen",
+    text: "I need tea to survive",
     imgUrl: "",
   },
   {
@@ -21,7 +21,7 @@ const miscellaneous = [
   },
   {
     id: v4(),
-    text: "My word of the year is: Freedom",
+    text: "My word of the year is... freedom",
     imgUrl: "",
   },
 ]
@@ -62,6 +62,7 @@ const Miscellaneous = () => (
     <SectionContainer>
       <Section
         title="Miscellaneous"
+        subtitle="I would need to film a 24 hour video for it to be a proper About Me so for now let's just roll with these random facts:"
         alignment="flex-start"
         animation="slideIn"
         from="left"

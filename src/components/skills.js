@@ -91,7 +91,7 @@ const Skills = () => (
       <Section
         title="Skills"
         alignment="flex-start"
-        subtitle="In my career, I have been part of numerous projects, adding features, fixing bugs, and working closely with designers. I have experience with responsive and cross-browser compatible applications and I am confident with my ability to create dynamic feeling pages that look just like the design."
+        subtitle="In my career, I have worked on numerous projects, adding features, fixing bugs, and working closely with designers. I have experience with responsive and cross-browser compatible applications and I am confident with my ability to create beautiful websites."
         // animation="transition"
       >
         <Items>
@@ -108,7 +108,7 @@ const Skills = () => (
       </Section>
 
       <Section
-        subtitle="Being a self-taught programmer, I relied heavily on platforms such as freeCodeCamp and Udemy, as well as the community around me, to familiarize myself with all these state of the art technologies."
+        subtitle="Being a self-taught programmer, I rely heavily on platforms such as freeCodeCamp and Udemy, as well as the people around me, to learn, sharpen my skills, and familiarize myself with all these state of the art technologies:"
         alignment="flex-start"
         animation="transition"
       >
@@ -120,7 +120,7 @@ const Skills = () => (
       </Section>
 
       <Section
-        subtitle="Soft skills. Being a self-taught programmer, I relied heavily on platforms such as freeCodeCamp and Udemy, as well as the community around me, to familiarize myself with all these state of the art technologies."
+        subtitle="Last but not least, my strongest human qualities are: I pay attention to detail, I am highly adaptable, and I work best in a team."
         alignment="flex-start"
       >
         <Hero />

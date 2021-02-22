@@ -120,7 +120,7 @@ const Section = ({
           )}
 
           {subtitle && (
-            <FadeIn isVisible={isVisible}>
+            <FadeIn isVisible={isVisible} alignment={alignment}>
               <Subtitle
                 $textAlign={alignment === "flex-start" ? "left" : "right"}
                 $extraMargin={extraMargin}
