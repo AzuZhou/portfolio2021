@@ -56,7 +56,7 @@ const Projects = () => (
         extraMargin
       >
         {projects.map(({ id, ...props }) => (
-          <Project key={v4()} id={id} {...props} />
+          <Project key={id} id={id} {...props} />
         ))}
       </Section>
     </SectionContainer>

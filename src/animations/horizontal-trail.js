@@ -61,7 +61,7 @@ export default ({ isVisible, children }) => {
 
         return (
           <a.div
-            key={items[index].props.id}
+            key={`${items[index].props.id}-animation`}
             style={{
               ...rest,
               transform: y.interpolate(y => `translate3d(${y}%, 0, 0)`),

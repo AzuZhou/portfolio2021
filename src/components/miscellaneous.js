@@ -70,7 +70,7 @@ const Miscellaneous = () => (
         titleColor={colors.BLUE}
       >
         {miscellaneous.map(({ id, text }) => (
-          <Note key={v4()} id={id}>
+          <Note key={id} id={id}>
             {text}
           </Note>
         ))}

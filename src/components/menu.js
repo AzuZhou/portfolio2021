@@ -27,7 +27,6 @@ const MenuIcon = styled.button`
 
 const MenuIconBar = styled.div`
   background-color: ${colors.SECONDHAND_GREY};
-  box-shadow: 0px 1px 2px white;
   height: 3px;
   width: 40px;
 `

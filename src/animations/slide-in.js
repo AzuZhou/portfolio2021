@@ -45,7 +45,7 @@ const SlideIn = ({ isVisible, from, gap, height, children }) => {
   )
 
   return transitions.map(({ item, key, props }) => (
-    <Container key={key} $height={height} $gap={gap}>
+    <Container key={`${key}-animation`} $height={height} $gap={gap}>
       {React.cloneElement(item, {
         style: props,
       })}

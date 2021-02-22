@@ -63,7 +63,7 @@ const Transition = ({ isVisible, children }) => {
   return (
     <Container>
       {transitions.map(({ item, key, props }) => (
-        <ItemContainer key={`${key}-transition`} style={props}>
+        <ItemContainer key={`${key}-animation`} style={props}>
           {item}
         </ItemContainer>
       ))}
