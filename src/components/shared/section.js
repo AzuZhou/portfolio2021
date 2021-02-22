@@ -26,6 +26,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  ${props => props.$end && `padding-bottom: 0;`}
 
   ${desktopBreakpoint} {
     align-items: ${props =>
@@ -100,6 +101,7 @@ const Section = ({
   alignment,
   direction,
   extraMargin,
+  end,
   ...animationProps
 }) => {
   const Animation = animation ? animations[animation] || null : null
@@ -107,7 +109,7 @@ const Section = ({
   return (
     <VisivilitySensor partialVisibility>
       {({ isVisible }) => (
-        <Container $alignment={alignment} $direction={direction}>
+        <Container $alignment={alignment} $direction={direction} $end={end}>
           {title && (
             <FadeIn isVisible={isVisible} alignment={alignment}>
               <TitleContainer>

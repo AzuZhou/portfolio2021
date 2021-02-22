@@ -19,8 +19,16 @@ const Container = styled.div`
     min-height: 200px;
     padding: 60px 30px;
 
+    &:last-child {
+      padding-bottom: 0px;
+    }
+
     @media screen and (min-width: 1200px) {
       padding: 80px 0;
+
+      &:last-child {
+        padding-bottom: 0px;
+      }
     }
   }
 `

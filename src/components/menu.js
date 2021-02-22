@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import "@fontsource/montserrat/500.css"
 
+import { contactIcons } from "./contact"
+
 import { colors, fontSizes } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"
 
@@ -120,6 +122,8 @@ const Menu = () => {
             <Underline />
           </div>
         </MenuItem>
+
+        <MenuItem>{contactIcons}</MenuItem>
       </MenuDropdown>
     </Container>
   )

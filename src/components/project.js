@@ -80,7 +80,7 @@ const Project = ({ name, link }) => (
       <ImageContainer></ImageContainer>
       <Label>
         <div />
-        <a href={link}>
+        <a href={link} target="_blank" rel="noreferrer">
           <Title>{name ?? "coming soon"}</Title>
         </a>
         <div />
