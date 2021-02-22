@@ -5,8 +5,6 @@ import { v4 } from "uuid"
 import Section from "./shared/section"
 import Project from "./project"
 
-import OuterSpace from "../images/outer-space.svg"
-
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 
 const projects = [
@@ -14,40 +12,19 @@ const projects = [
     name: "Movie Search",
     imgUrl: "",
     id: v4(),
-    text: [
-      "What I wanted to make. What I wanted to make. What I wanted to make.",
-      "Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies.",
-      "Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced.",
-      "What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt.",
-    ],
-    repoLink: "",
-    projectLink: "",
+    link: "",
   },
   {
-    name: "Real-time Chat",
+    // name: "Real-time Chat",
     imgUrl: "",
     id: v4(),
-    text: [
-      "What I wanted to make. What I wanted to make. What I wanted to make.",
-      "Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies.",
-      "Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced.",
-      "What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt.",
-    ],
-    repoLink: "",
-    projectLink: "",
+    link: "",
   },
   {
-    name: "Instagram Clone",
+    // name: "Instagram Clone",
     imgUrl: "",
     id: v4(),
-    text: [
-      "What I wanted to make. What I wanted to make. What I wanted to make.",
-      "Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies. Why these technologies.",
-      "Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced. Challenges I faced.",
-      "What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt. What I learnt.",
-    ],
-    repoLink: "",
-    projectLink: "",
+    link: "",
   },
 ]
 
@@ -68,11 +45,6 @@ const SectionContainer = styled.div`
   }
 `
 
-const Hero = styled(OuterSpace)`
-  margin-top: 100px;
-  width: 100%;
-`
-
 const Projects = () => (
   <Container id="projects">
     <SectionContainer>
@@ -83,14 +55,9 @@ const Projects = () => (
         subtitle="In my career, I have been part of numerous projects, adding features, fixing bugs, and working closely with designers. I have experience with responsive and cross-browser compatible applications and I am confident with my ability to create dynamic feeling pages that look just like the design."
         extraMargin
       >
-        {projects.map(({ id, ...props }, index) => {
-          const reverse = !Number.isInteger(index / 2)
-
-          return <Project key={v4()} id={id} reverse={reverse} {...props} />
-        })}
-      </Section>
-      <Section>
-        <Hero />
+        {projects.map(({ id, ...props }) => (
+          <Project key={v4()} id={id} {...props} />
+        ))}
       </Section>
     </SectionContainer>
   </Container>

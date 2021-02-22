@@ -21,7 +21,7 @@ const Container = styled.header`
   padding: 20px 20px 0 20px;
   padding: 20px;
 
-  @media screen and (min-width: 960px) {
+  ${desktopBreakpoint} {
     padding: 20px 40px 0 40px;
     padding: 20px 40px;
   }

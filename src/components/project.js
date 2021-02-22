@@ -1,48 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import ThreeD from "../animations/three-d"
-import { LinkOutlined } from "@ant-design/icons"
 
 import { colors, fontSizes } from "../styled/constants"
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: ${props => (props.$reverse ? "row-reverse" : "row")};
-  justify-content: space-between;
-
-  > div ~ div {
-    ${props => (props.$reverse ? "margin-right" : "margin-left")}: 60px;
-  }
-`
-
-const Text = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: ${props => (props.$reverse ? "flex-end" : "flex-start")};
-  text-align: ${props => (props.$reverse ? "right" : "left")};
-`
-
-const Title = styled.h4`
-  font-size: ${fontSizes.desktop.primaryText};
-  text-transform: uppercase;
-  font-weight: 500;
-  color: ${colors.BLUEBERRY};
-`
-
-const Paragraph = styled.p`
-  font-size: ${fontSizes.desktop.secondaryText};
-  font-weight: 500;
-  font-style: italic;
-
-  & ~ p {
-    margin-top: 10px;
-  }
-`
+import { desktopBreakpoint } from "../styled/styles"
 
 const Box = styled.div`
   background-color: white;
-  border: 2px solid ${colors.SECONDHAND_GREY};
+  border: 2px solid ${colors.BLUEBERRY};
   width: 260px;
   height: 260px;
   border-radius: 4px;
@@ -50,6 +15,11 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${desktopBreakpoint} {
+    width: 98%;
+    height: 98%;
+  }
 `
 
 const VerticalRectangle = styled.div`
@@ -65,39 +35,58 @@ const HorizontalRectangle = styled.div`
   width: 102%;
 `
 
-const Link = styled.a`
-  margin-bottom: 30px;
-  display: inline-flex;
+const ImageContainer = styled.div`
+  background: ${colors.FRENCH_PINK};
+  position: absolute;
+  z-index: 1;
+  width: 98%;
+  height: 98%;
+  filter: grayscale(1);
 `
 
-const RepoLink = styled(LinkOutlined)`
-  height: 100%;
+const Label = styled.div`
+  position: absolute;
+  z-index: 2;
+  width: 98%;
   display: flex;
   align-items: center;
-  margin-left: 6px;
-  color: ${colors.FRENCH_PINK};
+
+  > div {
+    background-color: white;
+
+    &:first-child,
+    &:last-child {
+      height: 2px;
+      width: 100%;
+    }
+  }
 `
 
-const Project = ({ name, text, repoLink, projectLink, reverse }) => (
-  <Container $reverse={reverse}>
-    <Text $reverse={reverse}>
-      <Link href={repoLink}>
-        <Title>{name}</Title>
-        <RepoLink />
-      </Link>
+const Title = styled.h4`
+  font-size: ${fontSizes.desktop.primaryText};
+  text-transform: uppercase;
+  font-weight: 500;
+  color: ${colors.BLUEBERRY};
+  white-space: nowrap;
+  padding: 20px 10px;
+  background-color: white;
+`
 
-      {text.map(p => (
-        <Paragraph>{p}</Paragraph>
-      ))}
-    </Text>
-
-    <ThreeD>
-      <Box>
-        <VerticalRectangle />
-        <HorizontalRectangle />
-      </Box>
-    </ThreeD>
-  </Container>
+const Project = ({ name, link }) => (
+  <ThreeD>
+    <Box>
+      <VerticalRectangle />
+      <HorizontalRectangle />
+      <ImageContainer></ImageContainer>
+      <Label>
+        <div />
+        <a href={link}>
+          <Title>{name ?? "coming soon"}</Title>
+        </a>
+        <div />
+      </Label>
+    </Box>
+  </ThreeD>
 )
 
 export default Project
