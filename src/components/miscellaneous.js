@@ -42,17 +42,32 @@ const SectionContainer = styled.div`
   }
 `
 
-const Note = styled(a.div)`
+const Message = styled(a.div)`
   position: absolute;
   white-space: nowrap;
   will-change: left, opacity;
-  color: ${colors.SECONDHAND_GREY};
+  color: white;
   text-align: center;
   font-size: ${fontSizes.mobile.primaryText};
+  background-color: ${colors.BLUEBERRY};
+  padding: 10px;
+  border-radius: 4px;
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.primaryText};
   }
+`
+
+const Tail = styled.div`
+  position: absolute;
+  background: linear-gradient(
+    135deg,
+    ${colors.BLUEBERRY} 0 50%,
+    white 50% 100%
+  );
+  height: 10px;
+  width: 10px;
+  bottom: -10px;
 `
 
 // TODO: handle responsive
@@ -71,9 +86,10 @@ const Miscellaneous = () => (
         titleColor={colors.BLUE}
       >
         {miscellaneous.map(({ id, text }) => (
-          <Note key={id} id={id}>
+          <Message key={id} id={id}>
             {text}
-          </Note>
+            <Tail />
+          </Message>
         ))}
       </Section>
     </SectionContainer>

@@ -6,7 +6,6 @@ const Container = styled(a.div)`
   position: relative;
   height: ${props => (props.$height ? `${props.$height}px` : 0)};
   width: 100%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
