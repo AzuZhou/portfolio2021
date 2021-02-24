@@ -8,7 +8,7 @@ const Container = styled(a.div)`
   }
 `
 
-export default ({ isVisible, gap, children }) => {
+const VerticalTrail = ({ isVisible, gap, children }) => {
   const items = React.Children.toArray(children)
 
   const trail = useTrail(items.length, {
@@ -37,3 +37,8 @@ export default ({ isVisible, gap, children }) => {
     </Container>
   ))
 }
+
+export default React.memo(
+  VerticalTrail,
+  (prevProps, nextProps) => prevProps.isVisible === nextProps.isVisible
+)

@@ -30,7 +30,7 @@ const Grid = styled(a.div)`
 
 // TODO: make grid dynamic and handle responsive
 
-export default ({ isVisible, children }) => {
+const HorizontalTrail = ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
 
   const trail = useTrail(items.length, {
@@ -64,3 +64,8 @@ export default ({ isVisible, children }) => {
     </Grid>
   )
 }
+
+export default React.memo(
+  HorizontalTrail,
+  (prevProps, nextProps) => prevProps.isVisible === nextProps.isVisible
+)

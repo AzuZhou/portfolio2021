@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import VisivilitySensor from "react-visibility-sensor"
+import VisivilitySensor from "../visibility-sensor"
 
 import FadeIn from "../../animations/fade-in"
 import VerticalTrail from "../../animations/vertical-trail"
@@ -107,7 +107,7 @@ const Section = ({
   const Animation = animation ? animations[animation] || null : null
 
   return (
-    <VisivilitySensor partialVisibility>
+    <VisivilitySensor partialVisibility once>
       {({ isVisible }) => (
         <Container $alignment={alignment} $direction={direction} $end={end}>
           {title && (
