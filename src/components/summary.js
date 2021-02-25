@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "./shared/image"
 import "@fontsource/montserrat/500.css"
 
 import Section from "./shared/section"
-
-import WorkingLate from "../images/working-late.svg"
 
 import { fontSizes } from "../styled/constants"
 import { responsivePadding } from "../styled/styles"
@@ -39,23 +39,39 @@ const Role = styled.p`
   font-size: ${fontSizes.desktop.title};
 `
 
-const Hero = styled(WorkingLate)`
+const ImageContainer = styled.div`
   margin-top: 40px;
   width: 100%;
 `
 
-const Summary = () => (
-  <Container>
-    <SectionContainer>
-      <Section
-      // animation="verticalTrail" gap={10}
-      >
-        <Name>Azucena Zhou</Name>
-        <Role>Frontend Developer</Role>
-        <Hero />
-      </Section>
-    </SectionContainer>
-  </Container>
-)
+const Summary = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "working-late.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Container>
+      <SectionContainer>
+        <Section
+        // animation="verticalTrail" gap={10}
+        >
+          <Name>Azucena Zhou</Name>
+          <Role>Frontend Developer</Role>
+          <ImageContainer>
+            <Image data={data} />
+          </ImageContainer>
+        </Section>
+      </SectionContainer>
+    </Container>
+  )
+}
 
 export default Summary
