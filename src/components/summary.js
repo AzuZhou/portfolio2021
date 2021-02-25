@@ -4,7 +4,7 @@ import "@fontsource/montserrat/500.css"
 
 import Section from "./shared/section"
 
-import Image from "../images/working-late.svg"
+import WorkingLate from "../images/working-late.svg"
 
 import { fontSizes } from "../styled/constants"
 import { responsivePadding } from "../styled/styles"
@@ -39,7 +39,7 @@ const Role = styled.p`
   font-size: ${fontSizes.desktop.title};
 `
 
-const Hero = styled(Image)`
+const Hero = styled(WorkingLate)`
   margin-top: 40px;
   width: 100%;
 `

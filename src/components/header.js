@@ -18,11 +18,9 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 0 20px;
-  padding: 20px;
+  padding: 20px 30px;
 
   ${desktopBreakpoint} {
-    padding: 20px 40px 0 40px;
     padding: 20px 40px;
   }
 `
