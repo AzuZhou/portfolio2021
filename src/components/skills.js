@@ -47,9 +47,14 @@ const SectionContainer = styled.div`
 const Items = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
 
-  div {
+  @media screen and (min-width: 1200px) {
+    justify-content: space-between;
+  }
+
+  > div {
     width: 260px;
     height: 260px;
     border-radius: 130px;
@@ -58,6 +63,15 @@ const Items = styled.div`
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02), 0 2px 2px rgba(0, 0, 0, 0.02),
       0 4px 4px rgba(0, 0, 0, 0.02), 0 2px 8px rgba(0, 0, 0, 0.02),
       0 8px 16px rgba(0, 0, 0, 0.02);
+    margin: 10px 0;
+
+    @media screen and (min-width: 587px) {
+      margin: 10px 20px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin: 0;
+    }
 
     &:first-child {
       svg {
