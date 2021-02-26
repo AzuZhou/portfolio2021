@@ -1,13 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { v4 } from "uuid"
+import { useStaticQuery, graphql } from "gatsby"
 
+import Image from "./shared/image"
 import Section from "./shared/section"
 
 import BugFixing from "../images/fixing-bugs.svg"
 import Mobile from "../images/mobile-development.svg"
 import Todo from "../images/to-do.svg"
-import Focus from "../images/dev-focus.svg"
 
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
 import { colors } from "../styled/constants"
@@ -81,52 +82,68 @@ const Items = styled.div`
   }
 `
 
-const Hero = styled(Focus)`
+const ImageContainer = styled.div`
   width: 100%;
 `
 
-const Skills = () => (
-  <Container id="skills">
-    <SectionContainer>
-      <Section
-        title="Skills"
-        alignment="flex-start"
-        subtitle="In my career, I have worked on numerous projects, adding features, fixing bugs, and working closely with designers. I have experience with responsive and cross-browser compatible applications and I am confident with my ability to create beautiful websites."
-        // animation="transition"
-      >
-        <Items>
-          <div>
-            <Todo />
-          </div>
-          <div>
-            <Mobile />
-          </div>
-          <div>
-            <BugFixing />
-          </div>
-        </Items>
-      </Section>
+const Skills = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "dev-focus.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
-      <Section
-        subtitle="Being a self-taught programmer, I rely heavily on platforms such as freeCodeCamp and Udemy, as well as the people around me, to learn, sharpen my skills, and familiarize myself with all these state of the art technologies:"
-        alignment="flex-start"
-        animation="transition"
-      >
-        {technologies.map(({ id, text }) => (
-          <span key={id} id={id}>
-            {text}
-          </span>
-        ))}
-      </Section>
+  return (
+    <Container id="skills">
+      <SectionContainer>
+        <Section
+          title="Skills"
+          alignment="flex-start"
+          subtitle="In my career, I have worked on numerous projects, adding features, fixing bugs, and working closely with designers. I have experience with responsive and cross-browser compatible applications and I am confident with my ability to create beautiful websites."
+          // animation="transition"
+        >
+          <Items>
+            <div>
+              <Todo />
+            </div>
+            <div>
+              <Mobile />
+            </div>
+            <div>
+              <BugFixing />
+            </div>
+          </Items>
+        </Section>
 
-      <Section
-        subtitle="Last but not least, my strongest human qualities are: I pay attention to detail, I am highly adaptable, and I work best in a team."
-        alignment="flex-start"
-      >
-        <Hero />
-      </Section>
-    </SectionContainer>
-  </Container>
-)
+        <Section
+          subtitle="Being a self-taught programmer, I rely heavily on platforms such as freeCodeCamp and Udemy, as well as the people around me, to learn, sharpen my skills, and familiarize myself with all these state of the art technologies:"
+          alignment="flex-start"
+          animation="transition"
+        >
+          {technologies.map(({ id, text }) => (
+            <span key={id} id={id}>
+              {text}
+            </span>
+          ))}
+        </Section>
+
+        <Section
+          subtitle="Last but not least, my strongest human qualities are: I pay attention to detail, I am highly adaptable, and I work best in a team."
+          alignment="flex-start"
+        >
+          <ImageContainer>
+            <Image data={data} />
+          </ImageContainer>
+        </Section>
+      </SectionContainer>
+    </Container>
+  )
+}
 
 export default Skills

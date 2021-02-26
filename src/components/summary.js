@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "./shared/image"
 import "@fontsource/montserrat/500.css"
 
+import Image from "./shared/image"
 import Section from "./shared/section"
 
 import { fontSizes } from "../styled/constants"

@@ -5,10 +5,10 @@ import {
   GithubOutlined,
   MailOutlined,
 } from "@ant-design/icons"
+import { useStaticQuery, graphql } from "gatsby"
 
+import Image from "./shared/image"
 import Section from "./shared/section"
-
-import Background from "../images/background.svg"
 
 import { colors, fontSizes } from "../styled/constants"
 import { responsivePadding, desktopBreakpoint } from "../styled/styles"
@@ -68,7 +68,7 @@ const IconContainer = styled.div`
   }
 `
 
-const Hero = styled(Background)`
+const ImageContainer = styled.div`
   width: 100%;
 `
 
@@ -108,16 +108,32 @@ export const contactIcons = (
   </>
 )
 
-const Contact = () => (
-  <Container>
-    <SectionContainer>
-      <Ruffles>{contactIcons}</Ruffles>
+const Contact = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "background.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
-      <Section end>
-        <Hero />
-      </Section>
-    </SectionContainer>
-  </Container>
-)
+  return (
+    <Container>
+      <SectionContainer>
+        <Ruffles>{contactIcons}</Ruffles>
+
+        <Section end>
+          <ImageContainer>
+            <Image data={data} />
+          </ImageContainer>
+        </Section>
+      </SectionContainer>
+    </Container>
+  )
+}
 
 export default Contact
