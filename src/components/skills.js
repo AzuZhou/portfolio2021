@@ -141,13 +141,6 @@ const Skills = () => {
         ))}
       </Section>
 
-      {/* <Section
-        subtitle="Last but not least, my strongest human qualities are: I pay attention to detail, I am highly adaptable, and I work best in a team."
-        alignment="flex-start"
-      >
-        Other type of skills
-      </Section> */}
-
       <Section fullWidth>
         <ImageContainer>
           <Image data={data} />

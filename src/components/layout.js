@@ -48,10 +48,10 @@ body {
 main {
   width: 100%;
   max-width: 1200px;
-  margin-top: 88px;
+  margin-top: 68px;
 
   ${desktopBreakpoint} {
-    margin-top: 96px;
+    margin-top: 76px;
   }
 }
 

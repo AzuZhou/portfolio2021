@@ -68,6 +68,17 @@ const Tail = styled.div`
 
 const Miscellaneous = () => (
   <SectionContainer>
+    {/* <Section
+        subtitle="Q&A Time"
+        alignment="flex-start"
+      >
+        Flipping card (round, to the right) Q&A
+
+        1. What makes me stand out as a dev: I pay attention to detail, I am highly adaptable, and I work best in a team 
+        2. What I value the most: Flexibility, people, and money (:
+        3. How my friends would describe me: Brave, easy-going, and great listener 
+      </Section> */}
+
     <Section
       title="Miscellaneous"
       subtitle="I would need to film a 24 hour video for it to be a proper About Me so for now let's just roll with these random facts:"

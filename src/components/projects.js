@@ -46,7 +46,6 @@ const Projects = () => (
       alignment="flex-end"
       animation="horizontalTrail"
       subtitle="Here are some personal projects I built lately. More to come soon."
-      extraMargin
     >
       {projects.map(({ id, ...props }) => (
         <Project key={id} id={id} {...props} />

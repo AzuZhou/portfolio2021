@@ -25,6 +25,7 @@ const Grid = styled(a.div)`
       "d2 d2 d2 . d3 d3 d3"
       ". . . . d3 d3 d3"
       ". . . . d3 d3 d3";
+    margin: 60px 0;
   }
 `
 

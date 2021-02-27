@@ -18,10 +18,10 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 10px 20px;
 
   ${desktopBreakpoint} {
-    padding: 20px 40px;
+    padding: 10px 40px;
   }
 `
 
@@ -54,16 +54,12 @@ const NavbarItem = styled.div`
 
   a {
     text-transform: uppercase;
-    font-size: ${fontSizes.mobile.secondaryText};
+    font-size: ${fontSizes.desktop.secondaryText};
     color: ${colors.SECONDHAND_GREY};
     font-weight: 500;
 
     & ~ a {
       margin-left: 40px;
-    }
-
-    ${desktopBreakpoint} {
-      font-size: ${fontSizes.desktop.secondaryText};
     }
   }
 `

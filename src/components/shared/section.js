@@ -14,7 +14,6 @@ import { desktopBreakpoint, responsivePadding } from "../../styled/styles"
 const animations = {
   verticalTrail: VerticalTrail,
   horizontalTrail: HorizontalTrail,
-  fadeIn: FadeIn,
   slideIn: SlideIn,
   transition: Transition,
 }
@@ -77,18 +76,24 @@ const Circle = styled.div`
 
 const TitleContainer = styled.div`
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+
+  ${desktopBreakpoint} {
+    margin-bottom: 60px;
+  }
 `
 
 const Subtitle = styled.p`
-  margin-bottom: ${props => (props.$extraMargin ? "100px" : "40px")};
-  margin-top: ${props => (props.$isSubsection ? "40px" : 0)};
+  margin-top: ${props => (props.$isSubsection ? "20px" : 0)};
+  margin-bottom: 20px;
   font-size: ${fontSizes.mobile.primaryText};
   color: ${colors.SECONDHAND_GREY};
   text-align: center;
   line-height: 30px;
 
   ${desktopBreakpoint} {
+    margin-top: ${props => (props.$isSubsection ? "40px" : 0)};
+    margin-bottom: 40px;
     font-size: ${fontSizes.desktop.primaryText};
     text-align: ${props => props.$textAlign ?? "initial"};
   }
@@ -101,7 +106,6 @@ const Section = ({
   animation,
   alignment,
   direction,
-  extraMargin,
   fullWidth,
   ...animationProps
 }) => {
@@ -128,7 +132,6 @@ const Section = ({
             <FadeIn isVisible={isVisible}>
               <Subtitle
                 $textAlign={alignment === "flex-start" ? "left" : "right"}
-                $extraMargin={extraMargin}
                 $isSubsection={!title}
               >
                 {subtitle}

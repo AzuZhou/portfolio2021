@@ -34,17 +34,12 @@ const MenuIconBar = styled.div`
 const MenuDropdown = styled.nav`
   position: absolute;
   width: 100%;
-  height: calc(100vh - 90px);
-  top: 90px;
+  height: calc(100vh - 68px);
+  top: 68px;
   left: 100%;
   background-color: white;
   left: ${props => (props.$isDropdownOpen ? 0 : "100%")};
   transition: left 0.3s ease-in-out;
-
-  ${desktopBreakpoint} {
-    height: calc(100vh - 98px);
-    top: 98px;
-  }
 `
 
 const MenuItem = styled.div`
@@ -59,10 +54,6 @@ const MenuItem = styled.div`
     font-size: ${fontSizes.mobile.primaryText};
     color: ${colors.SECONDHAND_GREY};
     font-weight: 500;
-
-    ${desktopBreakpoint} {
-      font-size: ${fontSizes.desktop.primaryText};
-    }
   }
 `
 
