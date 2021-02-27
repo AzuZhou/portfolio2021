@@ -5,7 +5,7 @@ import { v4 } from "uuid"
 import Section from "./shared/section"
 import Project from "./project"
 
-import { responsivePadding, desktopBreakpoint } from "../styled/styles"
+import { desktopBreakpoint } from "../styled/styles"
 
 const projects = [
   {
@@ -28,12 +28,6 @@ const projects = [
   },
 ]
 
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  ${responsivePadding}
-`
-
 const SectionContainer = styled.div`
   width: 100%;
   display: flex;
@@ -46,21 +40,19 @@ const SectionContainer = styled.div`
 `
 
 const Projects = () => (
-  <Container id="projects">
-    <SectionContainer>
-      <Section
-        title="Projects"
-        alignment="flex-end"
-        animation="horizontalTrail"
-        subtitle="Here are some personal projects I built lately. More to come soon."
-        extraMargin
-      >
-        {projects.map(({ id, ...props }) => (
-          <Project key={id} id={id} {...props} />
-        ))}
-      </Section>
-    </SectionContainer>
-  </Container>
+  <SectionContainer>
+    <Section
+      title="Projects"
+      alignment="flex-end"
+      animation="horizontalTrail"
+      subtitle="Here are some personal projects I built lately. More to come soon."
+      extraMargin
+    >
+      {projects.map(({ id, ...props }) => (
+        <Project key={id} id={id} {...props} />
+      ))}
+    </Section>
+  </SectionContainer>
 )
 
 export default Projects

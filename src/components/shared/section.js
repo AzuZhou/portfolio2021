@@ -9,7 +9,7 @@ import SlideIn from "../../animations/slide-in"
 import Transition from "../../animations/transition"
 
 import { fontSizes, colors } from "../../styled/constants"
-import { desktopBreakpoint } from "../../styled/styles"
+import { desktopBreakpoint, responsivePadding } from "../../styled/styles"
 
 const animations = {
   verticalTrail: VerticalTrail,
@@ -26,7 +26,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  ${props => props.$end && `padding-bottom: 0;`}
+  ${responsivePadding};
+  ${props => props.$fullWidth && "padding-left: 0px; padding-right: 0px;"};
 
   ${desktopBreakpoint} {
     align-items: ${props =>
@@ -101,7 +102,7 @@ const Section = ({
   alignment,
   direction,
   extraMargin,
-  end,
+  fullWidth,
   ...animationProps
 }) => {
   const Animation = animation ? animations[animation] || null : null
@@ -109,9 +110,13 @@ const Section = ({
   return (
     <VisivilitySensor partialVisibility once>
       {({ isVisible }) => (
-        <Container $alignment={alignment} $direction={direction} $end={end}>
+        <Container
+          $alignment={alignment}
+          $direction={direction}
+          $fullWidth={fullWidth}
+        >
           {title && (
-            <FadeIn isVisible={isVisible} alignment={alignment}>
+            <FadeIn isVisible={isVisible}>
               <TitleContainer>
                 <Circle $to={alignment === "flex-start" ? "left" : "right"} />
                 <Title>{title}</Title>
@@ -120,7 +125,7 @@ const Section = ({
           )}
 
           {subtitle && (
-            <FadeIn isVisible={isVisible} alignment={alignment}>
+            <FadeIn isVisible={isVisible}>
               <Subtitle
                 $textAlign={alignment === "flex-start" ? "left" : "right"}
                 $extraMargin={extraMargin}
@@ -140,7 +145,7 @@ const Section = ({
               {children}
             </Animation>
           ) : (
-            children
+            <FadeIn isVisible={isVisible}>{children}</FadeIn>
           )}
         </Container>
       )}

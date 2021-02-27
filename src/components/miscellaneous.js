@@ -6,7 +6,7 @@ import { a } from "react-spring"
 import Section from "./shared/section"
 
 import { colors, fontSizes } from "../styled/constants"
-import { responsivePadding, desktopBreakpoint } from "../styled/styles"
+import { desktopBreakpoint } from "../styled/styles"
 
 const miscellaneous = [
   {
@@ -25,12 +25,6 @@ const miscellaneous = [
     imgUrl: "",
   },
 ]
-
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  ${responsivePadding}
-`
 
 const SectionContainer = styled.div`
   width: 100%;
@@ -73,26 +67,24 @@ const Tail = styled.div`
 // TODO: handle responsive
 
 const Miscellaneous = () => (
-  <Container id="miscellaneous">
-    <SectionContainer>
-      <Section
-        title="Miscellaneous"
-        subtitle="I would need to film a 24 hour video for it to be a proper About Me so for now let's just roll with these random facts:"
-        alignment="flex-start"
-        animation="slideIn"
-        from="left"
-        gap={20}
-        height={40}
-      >
-        {miscellaneous.map(({ id, text }) => (
-          <Message key={id} id={id}>
-            {text}
-            <Tail />
-          </Message>
-        ))}
-      </Section>
-    </SectionContainer>
-  </Container>
+  <SectionContainer>
+    <Section
+      title="Miscellaneous"
+      subtitle="I would need to film a 24 hour video for it to be a proper About Me so for now let's just roll with these random facts:"
+      alignment="flex-start"
+      animation="slideIn"
+      from="left"
+      gap={20}
+      height={40}
+    >
+      {miscellaneous.map(({ id, text }) => (
+        <Message key={id} id={id}>
+          {text}
+          <Tail />
+        </Message>
+      ))}
+    </Section>
+  </SectionContainer>
 )
 
 export default Miscellaneous

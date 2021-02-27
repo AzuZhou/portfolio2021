@@ -18,8 +18,11 @@ import { colors } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"
 
 const GlobalStyle = createGlobalStyle`
-html {
+* {
   box-sizing: border-box;
+}
+
+html {
   height: 100%;
 }
 

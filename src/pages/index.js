@@ -9,26 +9,21 @@ import Projects from "../components/projects"
 import Miscellaneous from "../components/miscellaneous"
 import Contact from "../components/contact"
 
+import { sectionPadding } from "../styled/styles"
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  > section {
-    min-height: 200px;
-    padding: 60px 30px;
-
-    &:last-child {
-      padding-bottom: 0px;
-    }
-
-    @media screen and (min-width: 1200px) {
-      padding: 80px 0;
-
-      &:last-child {
-        padding-bottom: 0px;
-      }
-    }
+  > section:last-child {
+    padding-bottom: 0;
   }
+`
+
+const Section = styled.section`
+  display: flex;
+  justify-content: center;
+  ${sectionPadding};
 `
 
 const IndexPage = () => (
@@ -36,11 +31,25 @@ const IndexPage = () => (
     <SEO title="Home" />
 
     <Container>
-      <Summary />
-      <Skills />
-      <Projects />
-      <Miscellaneous />
-      <Contact />
+      <Section>
+        <Summary />
+      </Section>
+
+      <Section id="skills">
+        <Skills />
+      </Section>
+
+      <Section id="projects">
+        <Projects />
+      </Section>
+
+      <Section id="miscellaneous">
+        <Miscellaneous />
+      </Section>
+
+      <Section>
+        <Contact />
+      </Section>
     </Container>
   </Layout>
 )

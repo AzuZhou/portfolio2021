@@ -11,14 +11,7 @@ import Image from "./shared/image"
 import Section from "./shared/section"
 
 import { colors, fontSizes } from "../styled/constants"
-import { responsivePadding, desktopBreakpoint } from "../styled/styles"
-
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  ${responsivePadding}
-  padding-bottom: 0;
-`
+import { desktopBreakpoint } from "../styled/styles"
 
 const SectionContainer = styled.div`
   width: 100%;
@@ -47,6 +40,7 @@ const IconContainer = styled.div`
     height: 20px;
     width: 20px;
     padding: 10px;
+    box-sizing: content-box;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     background-color: white;
@@ -69,18 +63,44 @@ const IconContainer = styled.div`
 `
 
 const ImageContainer = styled.div`
+  margin-top: 40px;
   width: 100%;
 `
 
 const Ruffles = styled.div`
   display: none;
   position: fixed;
+  z-index: 2;
   right: 0;
   top: calc(50vh - 66px);
   flex-direction: column;
 
   ${desktopBreakpoint} {
     display: flex;
+  }
+`
+
+const Subtitle = styled.p`
+  font-family: "Playfair Display";
+  font-size: ${fontSizes.mobile.primaryText};
+  color: ${colors.SECONDHAND_GREY};
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 30px;
+  margin-bottom: 10px;
+
+  ${desktopBreakpoint} {
+    font-size: ${fontSizes.desktop.primaryText};
+  }
+`
+
+const Link = styled.a`
+  font-size: ${fontSizes.mobile.primaryText};
+  color: ${colors.BLUEBERRY};
+  font-family: "Playfair Display";
+
+  ${desktopBreakpoint} {
+    font-size: ${fontSizes.desktop.primaryText};
   }
 `
 
@@ -122,17 +142,19 @@ const Contact = () => {
   `)
 
   return (
-    <Container>
-      <SectionContainer>
-        <Ruffles>{contactIcons}</Ruffles>
+    <SectionContainer>
+      <Ruffles>{contactIcons}</Ruffles>
 
-        <Section end>
-          <ImageContainer>
-            <Image data={data} />
-          </ImageContainer>
-        </Section>
-      </SectionContainer>
-    </Container>
+      <Section fullWidth>
+        <Subtitle>Let's have a virtual tea!</Subtitle>
+
+        <Link href="mailto:azucena.zhou@gmail.com">azucena.zhou@gmail.com</Link>
+
+        <ImageContainer>
+          <Image data={data} />
+        </ImageContainer>
+      </Section>
+    </SectionContainer>
   )
 }
 

@@ -7,19 +7,13 @@ import Image from "./shared/image"
 import Section from "./shared/section"
 
 import { fontSizes } from "../styled/constants"
-import { responsivePadding } from "../styled/styles"
-
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  ${responsivePadding}
-`
 
 const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   p {
     text-align: center;
@@ -58,19 +52,20 @@ const Summary = () => {
   `)
 
   return (
-    <Container>
-      <SectionContainer>
-        <Section
-        // animation="verticalTrail" gap={10}
-        >
-          <Name>Azucena Zhou</Name>
-          <Role>Frontend Developer</Role>
-          <ImageContainer>
-            <Image data={data} />
-          </ImageContainer>
-        </Section>
-      </SectionContainer>
-    </Container>
+    <SectionContainer>
+      <Section
+      // animation="verticalTrail" gap={10}
+      >
+        <Name>Azucena Zhou</Name>
+        <Role>Frontend Developer</Role>
+      </Section>
+
+      <Section fullWidth>
+        <ImageContainer>
+          <Image data={data} />
+        </ImageContainer>
+      </Section>
+    </SectionContainer>
   )
 }
 
