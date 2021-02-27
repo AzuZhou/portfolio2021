@@ -44,14 +44,14 @@ const SectionContainer = styled.div`
 
 const Message = styled(a.div)`
   position: absolute;
-  white-space: nowrap;
   will-change: left, opacity;
   color: white;
-  text-align: center;
   font-size: ${fontSizes.mobile.primaryText};
   background-color: ${colors.BLUEBERRY};
   padding: 10px;
   border-radius: 4px;
+  white-space: pre-wrap;
+  text-align: left;
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.primaryText};

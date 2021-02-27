@@ -4,7 +4,8 @@ import { useTransition, a } from "react-spring"
 
 const Container = styled(a.div)`
   position: relative;
-  height: ${props => (props.$height ? `${props.$height}px` : 0)};
+  min-height: ${props => (props.$height ? `${props.$height}px` : 0)};
+  height: auto;
   width: 100%;
   display: flex;
   align-items: center;
