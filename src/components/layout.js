@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import "@fontsource/montserrat"
 import "@fontsource/playfair-display"
@@ -81,25 +80,13 @@ button {
 }
 `
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata?.title} />
-      <main>{children}</main>
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <>
+    <GlobalStyle />
+    <Header />
+    <main>{children}</main>
+  </>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

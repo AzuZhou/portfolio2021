@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import "@fontsource/montserrat/500.css"
@@ -64,10 +63,10 @@ const NavbarItem = styled.div`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <Container>
     <Logo to="/">
-      <h1>{siteTitle}</h1>
+      <h1>AZ</h1>
     </Logo>
 
     <Navbar>
@@ -87,13 +86,5 @@ const Header = ({ siteTitle }) => (
     <Menu />
   </Container>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: `AZ`,
-}
 
 export default Header

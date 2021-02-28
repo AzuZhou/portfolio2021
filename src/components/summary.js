@@ -62,7 +62,10 @@ const Summary = () => {
 
       <Section fullWidth>
         <ImageContainer>
-          <Image data={data} />
+          <Image
+            data={data}
+            alt="Frontend developer on her computer late at night"
+          />
         </ImageContainer>
       </Section>
     </SectionContainer>

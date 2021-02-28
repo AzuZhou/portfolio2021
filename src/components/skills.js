@@ -143,7 +143,7 @@ const Skills = () => {
 
       <Section fullWidth>
         <ImageContainer>
-          <Image data={data} />
+          <Image data={data} alt="Web developer focused on her tasks" />
         </ImageContainer>
       </Section>
     </SectionContainer>

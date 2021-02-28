@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `AZ`,
-    description: `Portfolio`,
+    title: `Azucena Zhou | Frontend Developer Portfolio`,
+    description: `Ohayou sekai, good morinig World! I am a self-taught Software Developer who just really likes pretty things. This porfolio in itself is a sneak peek of my web developemnt skills.`,
     author: `@azuzhou`,
   },
   plugins: [
@@ -18,8 +18,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Azucena Zhou`,
-        short_name: `AZ`,
+        name: `Azucena Zhou | Frontend Developer Portfolio`,
+        short_name: `Azucena Zhou | Portfolio`,
+        lang: `en`,
         start_url: `/`,
         background_color: `#4F86F7`,
         theme_color: `#4F86F7`,

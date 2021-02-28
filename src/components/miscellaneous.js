@@ -75,7 +75,7 @@ const Miscellaneous = () => (
         Flipping card (round, to the right) Q&A
 
         1. What makes me stand out as a dev: I pay attention to detail, I am highly adaptable, and I work best in a team 
-        2. What I value the most: Flexibility, people, and money (:
+        2. What I value the most: People, flexibility, and money (:
         3. How my friends would describe me: Brave, easy-going, and great listener 
       </Section> */}
 

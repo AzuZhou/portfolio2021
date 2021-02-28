@@ -151,7 +151,7 @@ const Contact = () => {
         <Link href="mailto:azucena.zhou@gmail.com">azucena.zhou@gmail.com</Link>
 
         <ImageContainer>
-          <Image data={data} />
+          <Image data={data} alt="Let's have a tea!" />
         </ImageContainer>
       </Section>
     </SectionContainer>
