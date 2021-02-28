@@ -62,7 +62,8 @@ const Label = styled.div`
   }
 `
 
-const Title = styled.h4`
+const Title = styled.p`
+  font-family: "Playfair Display";
   font-size: ${fontSizes.desktop.primaryText};
   text-transform: uppercase;
   font-weight: 500;
@@ -80,9 +81,9 @@ const Project = ({ name, link }) => (
       <ImageContainer></ImageContainer>
       <Label>
         <div />
-        <a href={link} target="_blank" rel="noreferrer">
-          <Title>{name ?? "coming soon"}</Title>
-        </a>
+        {/* <a href={link} target="_blank" rel="noreferrer"> */}
+        <Title>{name ?? "coming soon"}</Title>
+        {/* </a> */}
         <div />
       </Label>
     </Box>
