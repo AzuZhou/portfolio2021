@@ -7,7 +7,7 @@ import { contactIcons } from "./contact"
 import { colors, fontSizes } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"
 
-const Container = styled.div`
+const Container = styled.nav`
   display: initial;
 
   ${desktopBreakpoint} {
@@ -16,9 +16,33 @@ const Container = styled.div`
 `
 
 const MenuIcon = styled.button`
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: white;
+  justify-content: flex-start;
+
+  div:first-child {
+    transform-origin: top right;
+    transform: ${props =>
+      props.$isDropdownOpen
+        ? "rotateZ(-45deg) translateX(-3px) translateY(-6px)"
+        : "rotateZ(0deg) translate(0px) translateY(0px)"};
+    transition: transform 0.3s ease-in-out;
+  }
+
+  div:last-child {
+    transform-origin: bottom right;
+    transform: ${props =>
+      props.$isDropdownOpen
+        ? "rotateZ(45deg) translateX(-1px) translateY(6px)"
+        : "rotateZ(0deg) translate(0px) translateY(0px)"};
+    transition: transform 0.3s ease-in-out;
+  }
+
+  div:nth-child(2) {
+    opacity: ${props => (props.$isDropdownOpen ? 0 : 1)};
+  }
 
   div ~ div {
     margin-top: 8px;
@@ -79,7 +103,7 @@ const Menu = () => {
 
   return (
     <Container>
-      <MenuIcon onClick={handleDropdown}>
+      <MenuIcon onClick={handleDropdown} $isDropdownOpen={isDropdownOpen}>
         <MenuIconBar />
         <MenuIconBar />
         <MenuIconBar />

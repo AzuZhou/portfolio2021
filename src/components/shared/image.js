@@ -6,5 +6,11 @@ export default ({ data, alt }) => {
     return <div>Picture not found</div>
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} alt={alt} />
+  return (
+    <Img
+      fluid={data.placeholderImage.childImageSharp.fluid}
+      alt={alt}
+      backgroundColor={"white"}
+    />
+  )
 }
