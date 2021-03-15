@@ -46,6 +46,7 @@ const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
+    border-radius: 4px;
     filter: grayscale(1);
   }
 `
