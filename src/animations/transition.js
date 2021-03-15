@@ -33,13 +33,6 @@ const ItemContainer = styled(a.div)`
 
   ${desktopBreakpoint} {
     font-size: ${fontSizes.desktop.primaryText};
-    background-color: white;
-    color: ${colors.SECONDHAND_GREY};
-
-    &:hover {
-      background-color: ${colors.FRENCH_PINK};
-      color: white;
-    }
   }
 `
 

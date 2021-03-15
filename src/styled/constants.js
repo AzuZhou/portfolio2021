@@ -1,11 +1,9 @@
 export const colors = {
   FRENCH_PINK: "#FF7697",
   BLUEBERRY: "#4F86F7",
-  SLATE: "#262626",
   SECONDHAND_GREY: "#3F3F3F",
-  LIGHT_GREY: "#DCDCDC",
-  WHITISH: "#F5F5F5",
-  PURE_SILVER: "#C3C7C7",
+  BACKGROUND_BLUE: "#3f3d56",
+  BACKGROUND_GREY: "#e6e6e6",
 }
 
 export const fontSizes = {

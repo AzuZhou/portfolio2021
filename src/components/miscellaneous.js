@@ -64,8 +64,6 @@ const Tail = styled.div`
   bottom: -10px;
 `
 
-// TODO: handle responsive
-
 const Miscellaneous = () => (
   <SectionContainer>
     {/* <Section

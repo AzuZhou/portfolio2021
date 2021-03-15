@@ -1,32 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { v4 } from "uuid"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Section from "./shared/section"
 import Project from "./project"
 
 import { desktopBreakpoint } from "../styled/styles"
-
-const projects = [
-  {
-    name: "Movie Search",
-    imgUrl: "",
-    id: v4(),
-    link: "",
-  },
-  {
-    // name: "Real-time Chat",
-    imgUrl: "",
-    id: v4(),
-    link: "",
-  },
-  {
-    // name: "Instagram Clone",
-    imgUrl: "",
-    id: v4(),
-    link: "",
-  },
-]
 
 const SectionContainer = styled.div`
   width: 100%;
@@ -39,19 +19,76 @@ const SectionContainer = styled.div`
   }
 `
 
-const Projects = () => (
-  <SectionContainer>
-    <Section
-      title="Projects"
-      alignment="flex-end"
-      animation="horizontalTrail"
-      subtitle="Here are some personal projects I built lately. More to come soon."
-    >
-      {projects.map(({ id, ...props }) => (
-        <Project key={id} id={id} {...props} />
-      ))}
-    </Section>
-  </SectionContainer>
-)
+const Projects = () => {
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allFile(
+  //       filter: {
+  //         relativeDirectory: { eq: "projects" }
+  //         extension: { eq: "png" }
+  //       }
+  //     ) {
+  //       edges {
+  //         node {
+  //           childImageSharp {
+  //             fluid(maxWidth: 400) {
+  //               ...GatsbyImageSharpFluid
+  //               originalName
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+  // TODO: dynamically assign images
+
+  const data = useStaticQuery(graphql`
+    query {
+      imdbImage: file(relativePath: { eq: "projects/imdb.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  const projects = [
+    {
+      id: v4(),
+      name: "Movie Search",
+      img: data?.imdbImage?.childImageSharp?.fluid,
+      link: "https://hooked-movie-search.netlify.app/",
+    },
+    {
+      id: v4(),
+      // name: "Real-time Chat",
+      link: "",
+    },
+    {
+      id: v4(),
+      // name: "Instagram Clone",
+      link: "",
+    },
+  ]
+
+  return (
+    <SectionContainer>
+      <Section
+        title="Projects"
+        alignment="flex-end"
+        animation="horizontalTrail"
+        subtitle="Here are some personal projects I built lately. More to come soon."
+      >
+        {projects.map(({ id, img, ...props }) => (
+          <Project key={id} id={id} fluid={img} {...props} />
+        ))}
+      </Section>
+    </SectionContainer>
+  )
+}
 
 export default Projects

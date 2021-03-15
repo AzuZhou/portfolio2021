@@ -16,7 +16,7 @@ const Container = styled.nav`
 `
 
 const MenuIcon = styled.button`
-  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -42,6 +42,10 @@ const MenuIcon = styled.button`
 
   div:nth-child(2) {
     opacity: ${props => (props.$isDropdownOpen ? 0 : 1)};
+    transform: ${props =>
+      props.$isDropdownOpen ? "translateX(100%)" : " translateX(0%)"};
+    transition: transform 0.3s ease-in-out,
+      opacity ${props => (props.$isDropdownOpen ? "0s" : "0.3s ease-out")};
   }
 
   div ~ div {

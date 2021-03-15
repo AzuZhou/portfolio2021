@@ -29,8 +29,6 @@ const Grid = styled(a.div)`
   }
 `
 
-// TODO: make grid dynamic and handle responsive
-
 const HorizontalTrail = ({ isVisible, children }) => {
   const items = React.Children.toArray(children)
 

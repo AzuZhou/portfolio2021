@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
+
 import ThreeD from "../animations/three-d"
 
 import { colors, fontSizes } from "../styled/constants"
@@ -36,12 +38,16 @@ const HorizontalRectangle = styled.div`
 `
 
 const ImageContainer = styled.div`
-  background: ${colors.FRENCH_PINK};
   position: absolute;
   z-index: 1;
   width: 98%;
   height: 98%;
-  filter: grayscale(1);
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+  }
 `
 
 const Label = styled.div`
@@ -67,23 +73,31 @@ const Title = styled.p`
   font-size: ${fontSizes.desktop.primaryText};
   text-transform: uppercase;
   font-weight: 500;
-  color: ${colors.BLUEBERRY};
+  color: white;
   white-space: nowrap;
-  padding: 20px 10px;
-  background-color: white;
+  padding: 10px;
+  background-color: ${colors.FRENCH_PINK};
 `
 
-const Project = ({ name, link }) => (
+const Project = ({ name, link, fluid }) => (
   <ThreeD>
     <Box>
       <VerticalRectangle />
       <HorizontalRectangle />
-      <ImageContainer></ImageContainer>
+      <ImageContainer>
+        {fluid ? (
+          <Img fluid={fluid} alt={name} backgroundColor={"white"} />
+        ) : null}
+      </ImageContainer>
       <Label>
         <div />
-        {/* <a href={link} target="_blank" rel="noreferrer"> */}
-        <Title>{name ?? "coming soon"}</Title>
-        {/* </a> */}
+        {link ? (
+          <a href={link} target="_blank" rel="noreferrer">
+            <Title>{name ?? "coming soon"}</Title>
+          </a>
+        ) : (
+          <Title>{name ?? "coming soon"}</Title>
+        )}
         <div />
       </Label>
     </Box>
