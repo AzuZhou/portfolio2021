@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import ThreeD from "../animations/three-d"
 
@@ -80,14 +80,14 @@ const Title = styled.p`
   background-color: ${colors.FRENCH_PINK};
 `
 
-const Project = ({ name, link, fluid }) => (
+const Project = ({ name, link, img }) => (
   <ThreeD>
     <Box>
       <VerticalRectangle />
       <HorizontalRectangle />
       <ImageContainer>
-        {fluid ? (
-          <Img fluid={fluid} alt={name} backgroundColor={"white"} />
+        {img ? (
+          <GatsbyImage image={img} alt={name} backgroundColor={"white"} />
         ) : null}
       </ImageContainer>
       <Label>

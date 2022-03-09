@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { v4 } from "uuid"
 import { useStaticQuery, graphql } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
 
 import Section from "./shared/section"
 import Project from "./project"
@@ -31,8 +32,8 @@ const Projects = () => {
   //       edges {
   //         node {
   //           childImageSharp {
-  //             fluid(maxWidth: 400) {
-  //               ...GatsbyImageSharpFluid
+  //             gatsbyImageData
+  //             fluid {
   //               originalName
   //             }
   //           }
@@ -45,12 +46,10 @@ const Projects = () => {
   // TODO: dynamically assign images
 
   const data = useStaticQuery(graphql`
-    query {
+    {
       imdbImage: file(relativePath: { eq: "projects/imdb.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -60,7 +59,8 @@ const Projects = () => {
     {
       id: v4(),
       name: "Movie Search",
-      img: data?.imdbImage?.childImageSharp?.fluid,
+      // fileName: "imbd.png",
+      img: getImage(data.imdbImage),
       link: "https://hooked-movie-search.netlify.app/",
     },
     {
@@ -83,9 +83,9 @@ const Projects = () => {
         animation="horizontalTrail"
         subtitle="Here are some personal projects I built lately. More to come soon."
       >
-        {projects.map(({ id, img, ...props }) => (
-          <Project key={id} id={id} fluid={img} {...props} />
-        ))}
+        {projects.map(({ id, img, ...props }) => {
+          return <Project key={id} id={id} img={img} {...props} />
+        })}
       </Section>
     </SectionContainer>
   )

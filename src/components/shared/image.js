@@ -1,16 +1,12 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default ({ data, alt }) => {
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
+  const img = getImage(data.placeholderImage)
+
+  if (!img) {
     return <div>Picture not found</div>
   }
 
-  return (
-    <Img
-      fluid={data.placeholderImage.childImageSharp.fluid}
-      alt={alt}
-      backgroundColor={"white"}
-    />
-  )
+  return <GatsbyImage image={img} alt={alt} backgroundColor={"white"} />
 }
