@@ -21,59 +21,45 @@ const SectionContainer = styled.div`
 `
 
 const Projects = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allFile(
-  //       filter: {
-  //         relativeDirectory: { eq: "projects" }
-  //         extension: { eq: "png" }
-  //       }
-  //     ) {
-  //       edges {
-  //         node {
-  //           childImageSharp {
-  //             gatsbyImageData
-  //             fluid {
-  //               originalName
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // TODO: dynamically assign images
-
   const data = useStaticQuery(graphql`
-    {
-      imdbImage: file(relativePath: { eq: "projects/imdb.png" }) {
-        childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+    query {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "projects" }
+          extension: { eq: "png" }
+        }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData
+              fluid {
+                originalName
+              }
+            }
+          }
         }
       }
     }
   `)
 
-  const projects = [
-    {
+  const projects = {
+    imdb: {
       id: v4(),
       name: "Movie Search",
-      // fileName: "imbd.png",
-      img: getImage(data.imdbImage),
       link: "https://hooked-movie-search.netlify.app/",
     },
-    {
+    bookmark: {
       id: v4(),
-      // name: "Real-time Chat",
+      name: "Bookmark landing",
       link: "",
     },
-    {
-      id: v4(),
-      // name: "Instagram Clone",
-      link: "",
-    },
-  ]
+    // {
+    //   id: v4(),
+    //   // name: "Real-time Chat",
+    //   link: "",
+    // },
+  }
 
   return (
     <SectionContainer>
@@ -83,9 +69,17 @@ const Projects = () => {
         animation="horizontalTrail"
         subtitle="Here are some personal projects I built lately. More to come soon."
       >
-        {projects.map(({ id, img, ...props }) => {
-          return <Project key={id} id={id} img={img} {...props} />
-        })}
+        {data?.allFile?.edges &&
+          data?.allFile?.edges.map(edge => {
+            if (!edge.node.childImageSharp) return null
+
+            const fileName = edge.node.childImageSharp.fluid.originalName
+            const info = projects[fileName.split(".")[0]]
+            const img = getImage(edge.node.childImageSharp.gatsbyImageData)
+
+            if (!info) return null
+            return <Project key={fileName} img={img} {...info} />
+          })}
       </Section>
     </SectionContainer>
   )
