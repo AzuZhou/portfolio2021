@@ -39,20 +39,19 @@ const ImageContainer = styled.div`
 `
 
 const Summary = () => {
-  const data = useStaticQuery(graphql`{
-  placeholderImage: file(relativePath: {eq: "working-late.png"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+  const data = useStaticQuery(graphql`
+    {
+      placeholderImage: file(relativePath: { eq: "working-late.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
     }
-  }
-}
-`)
+  `)
 
   return (
     <SectionContainer>
-      <Section
-      // animation="verticalTrail" gap={10}
-      >
+      <Section animation="verticalTrail" gap={10} direction="column-reverse">
         <Name>Azucena Zhou</Name>
         <Role>Frontend Developer</Role>
       </Section>

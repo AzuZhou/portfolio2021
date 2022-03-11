@@ -11,16 +11,20 @@ import { desktopBreakpoint } from "../styled/styles"
 const Container = styled.header`
   position: fixed;
   z-index: 2;
-  background: white;
+  background: linear-gradient(
+    white calc(100% - 40px),
+    calc(100% - 30px),
+    transparent
+  );
   box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 20px 50px;
 
   ${desktopBreakpoint} {
-    padding: 10px 40px;
+    padding: 10px 40px 50px;
   }
 `
 

@@ -111,6 +111,9 @@ const Section = ({
 }) => {
   const Animation = animation ? animations[animation] || null : null
 
+  // TODO: replace VisibilitySensor with Intersection Observer custom hook and check whether the animation should start from top or bottom
+  // TODO: change FadeIn to fade in x srcoll in hybrid
+
   return (
     <VisivilitySensor partialVisibility once>
       {({ isVisible }) => (
@@ -139,7 +142,7 @@ const Section = ({
             </FadeIn>
           )}
 
-          {animation ? (
+          {animation && (
             <Animation
               isVisible={isVisible}
               alignment={alignment}
@@ -147,9 +150,9 @@ const Section = ({
             >
               {children}
             </Animation>
-          ) : (
-            <FadeIn isVisible={isVisible}>{children}</FadeIn>
           )}
+
+          {!animation && <FadeIn isVisible={isVisible}>{children}</FadeIn>}
         </Container>
       )}
     </VisivilitySensor>

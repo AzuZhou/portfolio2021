@@ -18,9 +18,8 @@ const VerticalTrail = ({ isVisible, gap, children }) => {
       friction: 300,
     },
     opacity: isVisible ? 1 : 0,
-    x: isVisible ? 0 : 100,
-    height: isVisible ? "auto" : 0,
-    from: { opacity: 0, x: 100, height: 0 },
+    x: isVisible ? 0 : -100,
+    from: { opacity: 0, x: -100 },
     delay: isVisible ? 300 : 0,
   })
 
