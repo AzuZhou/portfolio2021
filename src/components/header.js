@@ -11,20 +11,21 @@ import { desktopBreakpoint } from "../styled/styles"
 const Container = styled.header`
   position: fixed;
   z-index: 2;
-  background: linear-gradient(
-    white calc(100% - 40px),
-    calc(100% - 30px),
-    transparent
-  );
+  background: white;
   box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px 50px;
+  padding: 10px 20px;
+
+  @supports (backdrop-filter: saturate(180%) blur(18px)) {
+    backdrop-filter: saturate(180%) blur(18px);
+    background: rgba(255, 255, 255, 0.6);
+  }
 
   ${desktopBreakpoint} {
-    padding: 10px 40px 50px;
+    padding: 10px 40px;
   }
 `
 
