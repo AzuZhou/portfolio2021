@@ -23,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
 
 html {
   height: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -36,7 +35,7 @@ body {
 
 #___gatsby, #gatsby-focus-wrapper {
   min-height: 100%;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 }
@@ -47,11 +46,13 @@ body {
 
 main {
   width: 100%;
-  max-width: 1200px;
-  margin-top: 68px;
+  height: 100vh;
+  scroll-behavior: smooth;
+  // if I change it to margin snap scroll will not work
+  padding-top: 68px;
 
   ${desktopBreakpoint} {
-    margin-top: 76px;
+    padding-top: 76px;
   }
 }
 
@@ -85,7 +86,7 @@ const Layout = ({ children }) => (
   <>
     <GlobalStyle />
     <Header />
-    <main>{children}</main>
+    {children}
   </>
 )
 

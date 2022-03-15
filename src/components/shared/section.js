@@ -112,7 +112,11 @@ const Section = ({
   const Animation = animation ? animations[animation] || null : null
 
   // TODO: replace VisibilitySensor with Intersection Observer custom hook and check whether the animation should start from top or bottom
-  // TODO: change FadeIn to fade in x srcoll in hybrid
+
+  // TODO: 1. snap point vertically (alt intersectionO to keep track of active section -> scroll to top of the following section if close enough)
+  // 2. fade in and out?
+  // 3. get scroll direction with VisisbilityS (alt replace intersectionO)
+  // 4. change things according to direction
 
   return (
     <VisivilitySensor partialVisibility once>
