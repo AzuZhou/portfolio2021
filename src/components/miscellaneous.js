@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { v4 } from "uuid"
 import { a } from "react-spring"
 
-import Section from "./shared/section"
+import Section from "./shared/Section"
 
 import { colors, fontSizes } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"

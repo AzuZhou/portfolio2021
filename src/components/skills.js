@@ -4,7 +4,7 @@ import { v4 } from "uuid"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Image from "./shared/image"
-import Section from "./shared/section"
+import Section from "./shared/Section"
 
 import BugFixing from "../images/fixing-bugs.svg"
 import Mobile from "../images/mobile-development.svg"
@@ -96,14 +96,15 @@ const ImageContainer = styled.div`
 `
 
 const Skills = () => {
-  const data = useStaticQuery(graphql`{
-  placeholderImage: file(relativePath: {eq: "dev-focus.png"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+  const data = useStaticQuery(graphql`
+    {
+      placeholderImage: file(relativePath: { eq: "dev-focus.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
     }
-  }
-}
-`)
+  `)
 
   return (
     <SectionContainer>

@@ -8,7 +8,7 @@ import {
 import { useStaticQuery, graphql } from "gatsby"
 
 import Image from "./shared/image"
-import Section from "./shared/section"
+import Section from "./shared/Section"
 
 import { colors, fontSizes } from "../styled/constants"
 import { desktopBreakpoint } from "../styled/styles"

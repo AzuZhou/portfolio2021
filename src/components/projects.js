@@ -4,7 +4,7 @@ import { v4 } from "uuid"
 import { useStaticQuery, graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 
-import Section from "./shared/section"
+import Section from "./shared/Section"
 import Project from "./project"
 
 import { desktopBreakpoint } from "../styled/styles"

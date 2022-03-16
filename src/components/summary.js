@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import "@fontsource/montserrat/500.css"
 
 import Image from "./shared/image"
-import Section from "./shared/section"
+import Section from "./shared/Section"
 
 import { fontSizes } from "../styled/constants"
 
