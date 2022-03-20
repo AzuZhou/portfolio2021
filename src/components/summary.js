@@ -50,7 +50,7 @@ const Summary = () => {
   `)
 
   return (
-    <SectionContainer>
+    <SectionContainer id="summary">
       <Section animation="verticalTrail" gap={10} direction="column-reverse">
         <Name>Azucena Zhou</Name>
         <Role>Frontend Developer</Role>

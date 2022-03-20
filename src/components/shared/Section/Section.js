@@ -1,5 +1,4 @@
 import React from "react"
-
 import VisivilitySensor from "../../visibility-sensor"
 
 import FadeIn from "animations/fade-in"
@@ -35,7 +34,7 @@ const Section = ({
   // 2. fade in and out?
   // 3. get scroll direction with VisisbilityS (alt replace intersectionO)
   // 4. change things according to direction
-
+  // TODO: FIX - snap scroll freaking out in Chrome
   return (
     <VisivilitySensor partialVisibility once>
       {({ isVisible }) => (

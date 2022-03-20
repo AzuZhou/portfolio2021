@@ -19,10 +19,10 @@ const Container = styled.header`
   align-items: center;
   padding: 10px 20px;
 
-  @supports (backdrop-filter: saturate(180%) blur(18px)) {
+  /* @supports (backdrop-filter: saturate(180%) blur(18px)) {
     backdrop-filter: saturate(180%) blur(18px);
     background: rgba(255, 255, 255, 0.6);
-  }
+  } */
 
   ${desktopBreakpoint} {
     padding: 10px 40px;
