@@ -53,6 +53,13 @@ const Projects = () => {
           }
         }
       }
+      bookmarkImage: file(relativePath: { eq: "projects/bookmark.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -65,12 +72,12 @@ const Projects = () => {
     },
     {
       id: v4(),
-      // name: "Real-time Chat",
-      link: "",
+      name: "Bookmark Landing",
+      img: data?.bookmarkImage?.childImageSharp?.fluid,
+      link: "https://bookmark-landing-akqa.vercel.app/",
     },
     {
       id: v4(),
-      // name: "Instagram Clone",
       link: "",
     },
   ]

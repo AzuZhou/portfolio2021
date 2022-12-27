@@ -57,16 +57,7 @@ const Label = styled.div`
   width: 98%;
   display: flex;
   align-items: center;
-
-  > div {
-    background-color: white;
-
-    &:first-child,
-    &:last-child {
-      height: 2px;
-      width: 100%;
-    }
-  }
+  justify-content: center;
 `
 
 const Title = styled.p`
@@ -91,7 +82,6 @@ const Project = ({ name, link, fluid }) => (
         ) : null}
       </ImageContainer>
       <Label>
-        <div />
         {link ? (
           <a href={link} target="_blank" rel="noreferrer">
             <Title>{name ?? "coming soon"}</Title>
@@ -99,7 +89,6 @@ const Project = ({ name, link, fluid }) => (
         ) : (
           <Title>{name ?? "coming soon"}</Title>
         )}
-        <div />
       </Label>
     </Box>
   </ThreeD>
